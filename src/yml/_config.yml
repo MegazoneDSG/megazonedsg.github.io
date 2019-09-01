@@ -1,18 +1,48 @@
 # Site Settings
-#=include site.yml
+name: Megazone DSG Blog
+title: Megazone DSG Blog
+description: Megazone DSG Blog
+tags:
+  - blog
+  - template
+  - jekyll
+  - theme
+  - netlify
+email: youremail@xyz.com
+disqus_username: disqus_username
+show_hero: true
+
 
 # Social Media Settings
-# Remove the item if you don't need it
-#=include social.yml
+github_username: github_username
+facebook_username: facebook_username
+twitter_username: twitter_username
+instagram_username: instagram_username
+linkedin_username: linkedin_username
+medium_username: medium_username
+
 
 # Theme Settings
-#=include theme.yml
+themeColor: "#ff0a16"
+primaryDark: "#141414"
+accentDark: "#ffffff"
+lightGray: "#f2f2f2"
+texts: "#333333"
+
 
 # Posts Settings
-#=include posts.yml
+show_time_bar: true
+show_modal_on_exit: false
+show_modal_on_finish_post: true
+two_columns_layout: true
+
 
 # Advanced Settings
-#=include advanced.yml
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: "UA-XXXXXXXX-X"
+language: "en"
+
 
 # Build settings
 markdown: kramdown
