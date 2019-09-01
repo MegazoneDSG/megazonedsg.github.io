@@ -5,7 +5,7 @@ description: Megazone DSG Blog
 
 remote_theme : thiagorossener/jekflix-template
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "https://megazonedsg.github.io" # the base hostname & protocol for your site
 google_analytics: ""
 
 # User Settings
