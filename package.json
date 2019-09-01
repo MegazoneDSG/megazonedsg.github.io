@@ -1,44 +1,42 @@
 {
-  "name": "jekflix-template",
-  "version": "2.0.0",
-  "description": "A Jekyll theme inspired by Netflix",
+  "name": "thiagorossener.github.io",
+  "version": "1.0.0",
+  "description": "Blog pessoal de Thiago Rossener.",
   "main": "gulpfile.js",
-  "homepage": "https://github.com/thiagorossener/jekflix-template.git#readme",
+  "scripts": {
+    "test": "test"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thiagorossener/jekflix-template.git"
+    "url": "git+https://github.com/thiagorossener/thiagorossener.github.io.git"
   },
   "keywords": [
     "jekyll",
-    "template",
-    "theme",
     "blog",
-    "netlify"
+    "css",
+    "js",
+    "gulp",
+    "stylus"
   ],
   "author": "Thiago Rossener",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thiagorossener/jekflix-template/issues"
+    "url": "https://github.com/thiagorossener/thiagorossener.github.io/issues"
   },
+  "homepage": "https://github.com/thiagorossener/thiagorossener.github.io#readme",
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.18.13",
     "child_process": "^1.0.2",
-    "del": "^5.0.0",
-    "gulp": "^4.0.2",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^6.0.0",
-    "gulp-include": "^2.4.1",
+    "gulp-imagemin": "^3.3.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.5",
     "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-yaml": "^2.0.4",
     "jeet": "^7.1.0",
     "kouto-swiss": "^1.1.0",
-    "rupture": "^0.6.2",
-    "lodash": "^4.17.13",
-    "lodash.merge": "^4.6.2"
+    "minimist": "^1.2.0",
+    "rupture": "^0.6.2"
   }
 }

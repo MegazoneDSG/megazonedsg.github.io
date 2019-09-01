@@ -1,0 +1,45 @@
+# Site Settings
+title: Megazone DSG Blog
+email: seungpilpark@mz.co.kr
+description: Megazone DSG Blog
+
+remote_theme : thiagorossener/jekflix-template
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: ""
+
+# User Settings
+username: 메가존 DSG 테크블로그
+user_description:
+disqus_username: megazone-tech-blog-1
+
+# Social Media
+# Remove the item if you don't need it
+github_username: MegazoneDSG
+facebook_username: mz.sppark
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+paginate: 12
+paginate_path: "/page/:num/"
+svg_color: "#ff0a16"
+
+# Plugins
+plugins:
+  - jemoji
+  - jekyll-paginate
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/
+
+# Exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']

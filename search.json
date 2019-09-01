@@ -1,8 +1,7 @@
 ---
 ---
 [
-  {% assign posts = site.posts | where_exp:"post","post.is_generated != true" %}
-  {% for post in posts %}
+  {% for post in site.posts %}
     {
       "title"    : "{{ post.title | escape }}",
       "tags"     : "{{ post.tags | array_to_sentence_string }}",
