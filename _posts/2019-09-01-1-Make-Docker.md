@@ -1,5 +1,6 @@
 ---
 layout: post
+author: sondayeon
 title: "1# AWS에서 EC2 인스턴스에 Docker 설치하기"
 description: 1# AWS에서 EC2 인스턴스에 Docker 설치하기
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'

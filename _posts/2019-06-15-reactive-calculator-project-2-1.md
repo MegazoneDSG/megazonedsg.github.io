@@ -1,5 +1,6 @@
 ---
 layout: post
+author: soda1127
 title: "2-01.발전된 방식으로 리액티브하게 계산기 프로그램 만들기1"
 description: 더 발전된 방식으로 RxKotlin과 코루틴을 이용하여 리액티브 프로그래밍을 해봅시다.
 image: 'https://i.imgur.com/QfID9Fe.png'

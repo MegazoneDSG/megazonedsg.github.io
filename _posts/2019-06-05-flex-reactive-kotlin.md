@@ -1,5 +1,6 @@
 ---
 layout: post
+author: soda1127
 title: "1-00.코틀린을 리액티브하게 Flex하다"
 description: REACTIVE PROGRAMMING IN KOTLIN
 image: 'https://i.imgur.com/I8IKewN.png'

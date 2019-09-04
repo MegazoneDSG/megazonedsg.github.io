@@ -1,3 +1,4 @@
+{% assign author = site.authors[page.author] %}
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/BlogPosting">
     {% include head.html %}
@@ -18,6 +19,11 @@
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
                     <span>{{ minutesText }}</span>
                 </p>
+
+                <h3 class="name">
+                    {{ author.name }}
+                </h3>
+
                 <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
                 <p itemprop="description" class="subtitle">{{ page.description }}</p>
 

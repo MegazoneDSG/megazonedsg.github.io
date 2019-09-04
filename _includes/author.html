@@ -1,39 +1,41 @@
+{% assign author = site.authors[page.author] %}
 <section class="author" itemprop="author">
   <div class="details" itemscope itemtype="http://schema.org/Person">
-    <!--<img itemprop="image" class="img-rounded" src="https://i.imgur.com/wyo3PBm.jpg" alt="{{ site.name }}">-->
+    <img itemprop="image" class="img-rounded" src="{{ author.avatar }}" alt="{{ site.name }}">
+
     <p class="def">Author</p>
     <h3 class="name">
-      <a itemprop="name" href="https://github.com/{{ site.github_username }}">{{ site.username }}</a>
+      <a itemprop="name" href="https://github.com/{{ author.github_username }}">{{ author.name }}</a>
     </h3>
-    <p class="desc">{{ site.user_description }}</p>
+    <p class="desc">{{ author.description }}</p>
     <p>
-      {% if site.github_username %}
-      <a itemprop="github" href="https://github.com/{{ site.github_username }}" title="Github">
+      {% if author.github_username %}
+      <a itemprop="github" href="https://github.com/{{ author.github_username }}" title="Github">
         <svg><use xlink:href="#icon-github"></use></svg>
       </a>
       {% endif %}
-      {% if site.facebook_username %}
-      <a itemprop="facebook" href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
+      {% if author.facebook_username %}
+      <a itemprop="facebook" href="https://www.facebook.com/{{ author.facebook_username }}" title="Facebook">
         <svg><use xlink:href="#icon-facebook"></use></svg>
       </a>
       {% endif %}
-      {% if site.twitter_username %}
-      <a itemprop="twitter" href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
+      {% if author.twitter_username %}
+      <a itemprop="twitter" href="https://twitter.com/{{ author.twitter_username }}" title="Twitter">
         <svg><use xlink:href="#icon-twitter"></use></svg>
       </a>
       {% endif %}
-      {% if site.medium_username %}
-      <a itemprop="medium" href="https://medium.com/@{{ site.medium_username }}" title="Medium">
+      {% if author.medium_username %}
+      <a itemprop="medium" href="https://medium.com/@{{ author.medium_username }}" title="Medium">
         <svg><use xlink:href="#icon-medium"></use></svg>
       </a>
       {% endif %}
-      {% if site.instagram_username %}
-      <a itemprop="instagram" href="https://www.instagram.com/{{ site.instagram_username }}" title="Instagram">
+      {% if author.instagram_username %}
+      <a itemprop="instagram" href="https://www.instagram.com/{{ author.instagram_username }}" title="Instagram">
         <svg><use xlink:href="#icon-instagram"></use></svg>
       </a>
       {% endif %}
-      {% if site.linkedin_username %}
-      <a itemprop="linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">
+      {% if author.linkedin_username %}
+      <a itemprop="linkedin" href="https://www.linkedin.com/in/{{ author.linkedin_username }}" title="LinkedIn">
         <svg><use xlink:href="#icon-linkedin"></use></svg>
       </a>
       {% endif %}

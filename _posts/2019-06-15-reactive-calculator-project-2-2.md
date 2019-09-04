@@ -1,5 +1,6 @@
 ---
 layout: post
+author: soda1127
 title: "2-02.발전된 방식으로 리액티브하게 계산기 프로그램 만들기2"
 description: 코루틴을 이용하여 계산기 프로그램을 만들어 봅시다.
 image: 'https://i.imgur.com/QfID9Fe.png'

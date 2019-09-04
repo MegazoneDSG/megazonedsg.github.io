@@ -1,5 +1,6 @@
 ---
 layout: post
+author: soda1127
 title: "1-02.RxKotlin 시작하기"
 description: RxKotlin을 이용하여 리액티브 프로그래밍을 해봅시다.
 image: 'https://i.imgur.com/pr6E1OC.jpg'
