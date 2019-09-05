@@ -15,8 +15,6 @@ twitter_text: 프로젝트 인수인계 중에 AWS SES 반송 로직 코드를 �
 
 ---
 
-# AWS SES 이메일 반송 및 스팸 신고에 대응하기
-
 **출처**: [https://medium.com/@serbanmihai/how-to-handle-aws-ses-bounces-and-complaints-53d6e7455443](https://medium.com/@serbanmihai/how-to-handle-aws-ses-bounces-and-complaints-53d6e7455443)
 
 AWS Simple Email Service 를 구현하려는 경우, SES 계정을 샌드 박스 모드에서 해제하기 전에 이메일 반송 및 불만 사항을 처리하기위한 흐름이 필요하다는 것을 알 수 있습니다.
