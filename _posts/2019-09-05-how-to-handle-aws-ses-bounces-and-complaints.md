@@ -53,7 +53,7 @@ AWS SNS 에서 다음의 토픽을 구성합니다.
 - ses-complaints-topic-prod
 - ses-deliveries-topic-prod (optional)
 
-[1_JZ8CVlRWquIv20SKnUIjHg](https://user-images.githubusercontent.com/13447690/64316014-8b6f3d00-cfee-11e9-81d7-03d8ac7f1798.png)
+![1_JZ8CVlRWquIv20SKnUIjHg](https://user-images.githubusercontent.com/13447690/64316014-8b6f3d00-cfee-11e9-81d7-03d8ac7f1798.png)
 
 각 토픽을 생성한 후에는 구독을 만드는 다음 단계에서 필요한 ARN을 받게됩니다.
 
