@@ -6,7 +6,7 @@ title: "AWS SES 이메일 반송 및 스팸 신고에 대응하기"
 description: 프로젝트 인수인계 중에 AWS SES 반송 로직 코드를 보고, 업무를 이해하기 위해 작성하는 글.
 image:
 category: 'programming'
-date: 2019-09-01 01:05:00
+date: 2019-09-05 01:05:00
 tags:
 - aws
 - ses
