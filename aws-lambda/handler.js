@@ -1,5 +1,6 @@
 'use strict';
 
+let fs = require('fs');
 let Parser = require('rss-parser');
 let parser = new Parser();
 
@@ -18,7 +19,12 @@ module.exports.hello = async event => {
 
     for (var i = 0; i < feed.items.length; i++) {
         var item = feed.items[i];
-        console.log(item.title + ':' + item.link);
+        console.log(item.title + ':' + item.link + ': notification=' + item.notification);
+
+        //if not notification, continue
+        if (item.notification != 'true') {
+            continue;
+        }
 
         //get post
         var search = {
@@ -53,7 +59,8 @@ module.exports.hello = async event => {
         }
 
         //send email
-        var emails = JSON.parse(process.env.EMAILS);
+        var emailJson = fs.readFileSync('emails.json', 'utf8');
+        var emails = JSON.parse(emailJson);
         console.log('Send To', emails);
 
         var emailParams = {
