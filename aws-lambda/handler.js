@@ -19,12 +19,7 @@ module.exports.hello = async event => {
 
     for (var i = 0; i < feed.items.length; i++) {
         var item = feed.items[i];
-        console.log(item.title + ':' + item.link + ': notification=' + item.notification);
-
-        //if not notification, continue
-        if (item.notification != 'true') {
-            continue;
-        }
+        console.log(item.title + ':' + item.link);
 
         //get post
         var search = {
