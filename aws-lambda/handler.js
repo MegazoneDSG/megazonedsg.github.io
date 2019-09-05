@@ -3,6 +3,7 @@
 let fs = require('fs');
 let Parser = require('rss-parser');
 let parser = new Parser();
+var request = require('sync-request');
 
 let AWS = require('aws-sdk');
 const dynamoDb = new AWS.DynamoDB.DocumentClient({
@@ -13,6 +14,10 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient({
 let tableName = 'blog-post-list';
 
 module.exports.hello = async event => {
+
+    var res = request('GET', 'https://megazonedsg.github.io/emails.json');
+    var emails = JSON.parse(res.getBody('utf8'));
+    console.log(emails);
 
     let feed = await parser.parseURL('https://megazonedsg.github.io/feed.xml');
     console.log(feed.title);
@@ -54,9 +59,9 @@ module.exports.hello = async event => {
         }
 
         //send email
-        var emailJson = fs.readFileSync('emails.json', 'utf8');
-        var emails = JSON.parse(emailJson);
-        console.log('Send To', emails);
+        // var emailJson = fs.readFileSync('emails.json', 'utf8');
+        // var emails = JSON.parse(emailJson);
+        //console.log('Send To', emails);
 
         var emailParams = {
             Destination: {

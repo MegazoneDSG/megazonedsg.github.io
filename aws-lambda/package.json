@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.522.0",
-    "rss-parser": "^3.7.2"
+    "rss-parser": "^3.7.2",
+    "sync-request": "^6.1.0"
   },
   "devDependencies": {
     "serverless-offline": "^5.10.1"
