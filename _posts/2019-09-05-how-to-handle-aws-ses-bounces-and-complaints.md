@@ -19,9 +19,9 @@ twitter_text: 프로젝트 인수인계 중에 AWS SES 반송 로직 코드를 �
 
 AWS Simple Email Service 를 구현하려는 경우, SES 계정을 샌드 박스 모드에서 해제하기 전에 이메일 반송 및 불만 사항을 처리하기위한 흐름이 필요하다는 것을 알 수 있습니다.
 
-*Bounce* 이메일은 받는 사람 이메일이 없는 경우  
+**Bounce** 이메일은 받는 사람 이메일이 없는 경우  
  
-*Complaints* 이메일은 수신자가 받은 편지함에서 차단한 경우입니다. 
+**Complaints** 이메일은 수신자가 받은 편지함에서 차단한 경우입니다. 
 예를 들어 SPAM으로 표시하면 이러한 보고서가 트리거됩니다.  
 
 ESP (Email Service Provider)는 모든 주요 인터넷 서비스 제공 (ISP)과 함께 "피드백 루프"라고합니다.
@@ -40,7 +40,7 @@ ESP (Email Service Provider)는 모든 주요 인터넷 서비스 제공 (ISP)�
 
 # Overview of handling of bounce/complaints
 
-다음은 AWS SNS service 를 활용한 *bounce/complaints* 이메일 핸들링 과정입니다.
+다음은 AWS SNS service 를 활용한 **bounce/complaints** 이메일 핸들링 과정입니다.
 
 ![1_-eRHvZt-9R_R_7f6f0yCvw](https://user-images.githubusercontent.com/13447690/64315871-39c6b280-cfee-11e9-9a2f-450b595e20da.png)
 
@@ -59,7 +59,7 @@ AWS SNS 에서 다음의 토픽을 구성합니다.
 
 ![1_sWjh8Qxn-o5wyqvI5Ipe3Q](https://user-images.githubusercontent.com/13447690/64316025-94f8a500-cfee-11e9-9f69-6cc9f68a89e6.png)
 
-SNS 구독으로 이동하여 이전에 만든 *bounce/complaints* 토픽에 대한 SNS 구독을 만듭니다.
+SNS 구독으로 이동하여 이전에 만든 **bounce/complaints** 토픽에 대한 SNS 구독을 만듭니다.
 여기서 각 토픽에서 알림을 받을 엔드 포인트를 지정해야합니다. 엔드 포인트는 어플리케이션의 백엔드에서 POST 로 받을 수 있어야 합니다.
 
 ![1__Bnw9nIcRwC4LjH9hd3Mow](https://user-images.githubusercontent.com/13447690/64316150-f6b90f00-cfee-11e9-9412-4901aaa82a43.png)
@@ -74,7 +74,7 @@ SNS 구독으로 이동하여 이전에 만든 *bounce/complaints* 토픽에 대
 
 2. Configure SES to publish notifications to each created SNS topic
 
-SES 관리 콘솔-> 이메일 주소 -> 이메일 주소 선택 한 후 *Notifications* 탭을 엽니다.
+SES 관리 콘솔-> 이메일 주소 -> 이메일 주소 선택 한 후 **Notifications** 탭을 엽니다.
 *Edit Configuration* 탭을 선택하고, 각 알림 유형에 대한 SNS 주제를 선택하도록 합니다.
 
 ![1_k4fHq6CgGYUeXZjNmyXOLA](https://user-images.githubusercontent.com/13447690/64316531-1270e500-cff0-11e9-8a56-174c734436ab.png)
@@ -83,15 +83,15 @@ AWS 메일 박스 시뮬레이터는 SES 관리 콘솔에서 찾을 수 있으�
 
 ![1_Pydm3yb5aGuuRerVw6mxcQ](https://user-images.githubusercontent.com/13447690/64316654-6c71aa80-cff0-11e9-986f-5a2fe89e2c23.png)
 
-*success@simulator.amazonses.com* 으로 보낸 메일은 성공적으로 배달 된 것으로 간주됩니다.
+**success@simulator.amazonses.com** 으로 보낸 메일은 성공적으로 배달 된 것으로 간주됩니다.
 
-*bounce@simulator.amazonses.com* 으로 발송 된 메일은 SMTP 550 (“알 수없는 사용자”) 응답 코드로 거부됩니다. Amazon SES가 이메일 또는 SNS 알림으로 반송 알림을 보냅니다.
+**bounce@simulator.amazonses.com** 으로 발송 된 메일은 SMTP 550 (“알 수없는 사용자”) 응답 코드로 거부됩니다. Amazon SES가 이메일 또는 SNS 알림으로 반송 알림을 보냅니다.
 
-*ooto@simulator.amazonses.com* 으로 보낸 메일은 성공적으로 배달 된 것으로 간주됩니다.
+**ooto@simulator.amazonses.com** 으로 보낸 메일은 성공적으로 배달 된 것으로 간주됩니다.
 
-*expert@simulator.amazonses.com* 으로 전송 된 메일은 수신자가 이메일 애플리케이션에서 스팸으로 표시를 클릭하고 ISP가 Amazon SES에 불만 응답을 보내는 경우를 시뮬레이션합니다.
+**expert@simulator.amazonses.com** 으로 전송 된 메일은 수신자가 이메일 애플리케이션에서 스팸으로 표시를 클릭하고 ISP가 Amazon SES에 불만 응답을 보내는 경우를 시뮬레이션합니다.
 
-*blacklist@simulator.amazonses.com* 으로 전송 된 메일은 Amazon SES가 전송 시도를 차단하고 "주소 블랙리스트" 오류 메시지가 포함 된 MessageRejected 오류를 반환합니다.
+**blacklist@simulator.amazonses.com** 으로 전송 된 메일은 Amazon SES가 전송 시도를 차단하고 "주소 블랙리스트" 오류 메시지가 포함 된 MessageRejected 오류를 반환합니다.
 
 
 
