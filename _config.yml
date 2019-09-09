@@ -36,6 +36,13 @@ authors:
     email: sondayeon@mz.co.kr
     github_username: it-dayeon
     facebook_username:
+  byeongcheonmun:
+    name: 문병천
+    description: 그냥저냥 이것저것 모아두는 습성을 가졌습니다.
+    avatar: ""
+    email: munbc@mz.co.kr
+    github_username: munbc8308
+    facebook_username: 
 
 # Build settings
 markdown: kramdown
