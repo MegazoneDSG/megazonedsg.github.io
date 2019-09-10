@@ -4,7 +4,7 @@ author: byeongcheonmun
 notification: true
 title: "Spring-boot-data-jpa Example"
 description: JPA를 사용하여 간단히 조회를 해보자!
-image:
+image: ![cloud-db1](https://user-images.githubusercontent.com/9576729/64586673-06ae6580-d3d8-11e9-8075-5e3d39378005.jpg)
 category: 'programming'
 date: 2019-09-10 12:11:00
 tags:
