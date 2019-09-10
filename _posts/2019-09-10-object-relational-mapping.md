@@ -10,6 +10,7 @@ date: 2019-09-10 12:11:00
 tags:
 - java
 - database
+- orm
 introduction: 객체 관계 매핑에 대한 스터디 내용을 정리하였습니다.
 ---
 
