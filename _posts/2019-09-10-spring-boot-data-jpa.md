@@ -143,9 +143,9 @@ SELECT * FROM USER_ROLE;
 잘 생성 되었다!
 
 ### 3. JPA 구조 생성
-- Entity 를 작성한다. 쉽게 테이블을 객체 형태로 만든다고 생각하면 된다. 사용자는 여러룰을 가질수 있기 때문에 userRole 객체를 List 형태로 가지고 있을 수 있다.
+- Entity 를 작성한다. 쉽게 테이블을 객체 형태로 만든다고 생각하면 된다.
 
-User Entity
+User Entity - Entitiy 어노테이션을 통해 이 객체가 Entity라고 선언하여 준다. 필드값의 Id 어노테이션은 테이블의 키값을 의미 한다. 다중 키값의 설정을 불가하다. CreationTimestamp 어노테이션은 Insert나 Update 가 발생할시 현재 시간 값을 자동으로 넣어 주는 기능을 한다. 그리고 사용자는 여러룰을 가질수 있기 때문에 userRole 객체를 조인하며 List 형태로 가지고 있을 수 있다. 
 
 ```
 package com.example.ormtest.entity;
