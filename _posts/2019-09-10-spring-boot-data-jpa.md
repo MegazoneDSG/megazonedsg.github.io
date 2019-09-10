@@ -27,7 +27,7 @@ introduction: JPA를 사용하여 간단히 조회를 해보자!
 - Springboot Component 선택
 ![프로젝트생성3](https://user-images.githubusercontent.com/9576729/64584227-e332ed00-d3ce-11e9-8786-2f25aa0b7bbb.PNG)
 
-Spring Data JPA 와 테스트 용도로 쓸 H2 Database를 선택 하였다. 그리고 별도로 Spring Web Service 와 lombok 을 추가 하였다.
+Spring Data JPA 와 테스트 용도로 쓸 H2 Database를 선택 하였다. 그리고 별도로 ***Spring Web Service*** 와 ***lombok*** 을 추가 하였다.
 
 ### 2. H2 Database 설정
 - application.properties
@@ -147,12 +147,13 @@ User Entity
 ```
 package com.example.ormtest.entity;
 
-import jdk.jfr.Timestamp;
-import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -167,11 +168,17 @@ public class User {
 
     private String address;
 
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date created_at;
 
-    @Timestamp
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date latest_login_at;
 
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private List<UserRole> userRole;
 }
 ```
 
@@ -180,15 +187,12 @@ UserRole Entity - 사용자 룰은 사용자테이블을 참고하기 때문에 
 ```
 package com.example.ormtest.entity;
 
-import jdk.jfr.Timestamp;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.sql.Date;
-import java.util.List;
+
 
 @Entity
 @Data
@@ -201,12 +205,9 @@ public class UserRole {
 
     private String role;
 
-    @Timestamp
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date authorized_at;
-
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<User> user;
 }
 ```
 
