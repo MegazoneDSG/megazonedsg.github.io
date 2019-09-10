@@ -237,7 +237,7 @@ public interface UserRepository extends JpaRepository<User, String> {
 public interface 이름 extends JpaRepository <엔티티 ID 유형>
 ```
 이런 형태를 따른다. 위의 코드는 User Entity의 ID가 String 타입이라 String으로 선언하였다.
-그리고 @Query 어노테이션을 사용하여 JPQL 형태의 쿼리를 사용해 보았다. 사실 같은 기능을 하는 findAll() 이라는 함수가 JpaRepository 내에 이미 존재 하고 있다. 기본적으로 사용하는 CRUD 명령은 JpaRepository 클래스에 이미 명시되어 있다. 
+그리고 @Query 어노테이션을 사용하여 JPQL 형태의 쿼리를 사용해 보았다. 사실 같은 기능을 하는 findAll() 이라는 함수가 JpaRepository 내에 이미 존재 하고 있다. 우리가 기본적으로 사용하는 CRUD 명령은 JpaRepository 클래스에 이미 명시되어 있다. 
 
 ### 4. 테스트 코드 실행
 이제 기본적인 틀은 만들어 진것 같다. 방금 작성한 UserRepository 를 이용하여 간단하게 테스트 코드를 작성해 보자. 프로젝트의 테스트 코드에다 작성 하였다.
