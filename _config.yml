@@ -1,8 +1,8 @@
 # Site Settings
-title: Megazone DSG Blog
-display_name: 메가존 DSG 테크블로그
+title: Megazone DSG WebService Blog
+display_name: 메가존 DSG 웹서비스부문 블로그 (Beta)
 email: seungpilpark@mz.co.kr
-description: 메가존 DSG 인원들의 블로그 사이트
+description: 메가존 DSG 웹서비스부문 인원들의 블로그 사이트
 disqus_username: megazone-tech-blog-1
 twitter_username:
 
