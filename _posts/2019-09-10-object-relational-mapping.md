@@ -1,4 +1,17 @@
-# Object Relation Mapping
+---
+layout: post
+author: byeongcheonmun
+notification: true
+title: "Object Relation Mapping"
+description: 객체 관계 매핑에 대한 스터디 내용을 정리하였습니다.
+image:
+category: 'programming'
+date: 2019-09-10 12:11:00
+tags:
+- java
+- database
+introduction: 객체 관계 매핑에 대한 스터디 내용을 정리하였습니다.
+---
 
 ORM (Object Relation Mapping) 객체 관계 매핑
 >객체 관계 매핑은 데이터베이스와 객체 지향 프로그래밍 언어 간의 호환되지 않는 데이터를 변환하는 >프로그래밍 기법이다. 객체 지향 언어에서 사용할 수 있는 "가상" 객체 데이터베이스를 구축하는 >방법이다. -wikipedia.org
