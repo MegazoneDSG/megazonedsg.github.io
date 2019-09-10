@@ -16,7 +16,6 @@ tags:
 introduction: JPA를 사용하여 간단히 조회를 해보자!
 ---
 
-## Spring-boot-data-jpa Example
 앞서 ORM의 개념을 살펴 보았으니 실재적으로 어떻게 사용하는지 알아보도록 하자. SpringBoot를 이용하여 대표적인 ORM 인 JPA를 사용하여 보자!
 
 샘플 프로젝트를 만들어 보자.
