@@ -119,6 +119,8 @@ INSERT INTO USER_ROLE (ROLE_ID, USER_ID, ROLE, AUTHORIZED_AT)
 VALUES ('4', '4', 'USER', NOW());
 INSERT INTO USER_ROLE (ROLE_ID, USER_ID, ROLE, AUTHORIZED_AT)
 VALUES ('5', '5', 'USER', NOW());
+INSERT INTO USER_ROLE (ROLE_ID, USER_ID, ROLE, AUTHORIZED_AT)
+VALUES ('6', '1', 'USER', NOW());
 ```
 
 이제 프로젝트를 런하여 H2 Database 에 해당 내용이 작성이 되는지 확인해 보자. 프로젝트가 정상적으로 실행 되었으면 브라우저를 열어 H2 콘솔에 접속하여 보자
