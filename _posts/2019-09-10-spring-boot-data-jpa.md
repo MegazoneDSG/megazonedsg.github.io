@@ -5,7 +5,7 @@ notification: true
 title: "Spring-boot-data-jpa Example"
 description: JPA를 사용하여 간단히 조회를 해보자!
 image: https://user-images.githubusercontent.com/9576729/64586845-7fadbd00-d3d8-11e9-87c3-8c950c6b6a22.jpg
-category: 'programming'
+category: 'tutorial'
 date: 2019-09-10 12:11:00
 tags:
 - java
@@ -26,17 +26,19 @@ introduction: JPA를 사용하여 간단히 조회를 해보자!
 ![프로젝트생성2](https://user-images.githubusercontent.com/9576729/64584206-d44c3a80-d3ce-11e9-8cdc-d11b6733d93f.PNG)
 - Springboot Component 선택
 ![프로젝트생성3](https://user-images.githubusercontent.com/9576729/64584227-e332ed00-d3ce-11e9-8786-2f25aa0b7bbb.PNG)
-Spring Data JPA 와 테스트 용도로 쓸 H2 Database를 선택 하였다.
+
+Spring Data JPA 와 테스트 용도로 쓸 H2 Database를 선택 하였다. 그리고 별도로 Spring Web Service 와 lombok 을 추가 하였다.
 
 ### 2. H2 Database 설정
 - application.properties
-```sh
+
+```
 spring.datasource.driver-class-name=org.h2.Driver
 spring.datasource.url=jdbc:h2:mem:test
 spring.datasource.username=sa
 spring.datasource.password=sa
 spring.jpa.show-sql=true
-spring.flyway.locations=classpath:h2/initialDml
+spring.flyway.locations=classpath:initialDml
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2-console
 server.port=8090
@@ -44,17 +46,21 @@ server.port=8090
 
 - flyway
 
-Flyway는 오픈소스 Database 마이그레이션 Tool이다. 서비스가 실행 되면서 H2 Database에 필요한 테이블 및 데이터를 생성하기 위해 사용 하였다.
-프로젝트 루트의 pom.xml에 flyway dependency를 추가 한다.
+서비스가 실행 되면서 H2 Database에 필요한 테이블 및 데이터를 생성하기 위해 flyway 라는 툴을 사용 하였다. 참고로 Flyway는 오픈소스 Database 마이그레이션 Tool이다. 프로젝트 루트의 pom.xml에 flyway dependency를 추가 한다.
 
-![flywayPom](https://user-images.githubusercontent.com/9576729/64584410-897ef280-d3cf-11e9-8a99-ad68ae1b48a4.PNG)
+```
+<!-- flyway 서비스 실행시 H2에 샘플 데이터를 입력하기 위해-->
+<dependency>
+    <groupId>org.flywaydb</groupId>
+    <artifactId>flyway-core</artifactId>
+</dependency>
+```
 
-서비스가 실행되면서 작업할 DML 및 SQL 문들을 생성한다. 위의 설정중에 flyway.location에 실행할 sql파일이 위치하게 된다. 실행될 파일들은 시작이 대문자 V 로 시작하게 되며 이하 숫자에 따라 실행 순서가 정해 진다. 그리고 언더 바의 갯수에 따라 하위 작업인지 파일 명인지 구분 되어 진다.
+Springboot application이 실행되면서 작업할 DML 및 SQL 문들을 생성해야 한다. 위의 설정중에 flyway.location에 실행할 sql파일이 위치하게 된다. 실행될 파일들은 시작이 대문자 V 로 시작하게 되며 이하 숫자에 따라 실행 순서가 정해 진다. 그리고 언더 바의 갯수에 따라 하위 작업인지 파일 명인지 구분 되어 진다.
 
 ![flywayDML](https://user-images.githubusercontent.com/9576729/64584449-aa474800-d3cf-11e9-9931-50ae376dbffe.PNG)
 
-잘 찾아보면 application.properties 파일과 다른 부분이 있을것이다. 찾아서 수정할 기회를 주겠다.
-각각의 내용은 다음과 같다.
+테스트에 필요한 테이블과 데이터를 생성하기 위한 SQL 문들이다. 각각의 내용은 다음과 같다.
 
 #### V1__InitializeDml.sql
 ```sh
@@ -116,24 +122,115 @@ VALUES ('5', '5', 'USER', NOW());
 ```
 
 이제 프로젝트를 런하여 H2 Database 에 해당 내용이 작성이 되는지 확인해 보자. 프로젝트가 정상적으로 실행 되었으면 브라우저를 열어 H2 콘솔에 접속하여 보자
-- H2 Console
+
+- H2 Console [link](http://localhost:8090/h2-console)
+
 ![h2콘솔1](https://user-images.githubusercontent.com/9576729/64584973-dfed3080-d3d1-11e9-91c1-b283a8c0e81b.PNG)
+
+H2 콘솔 접속 화면이다. URL에 application.properties 에서 설정한 spring.datasource.url 값을 넣는다. 사용자 password도 application.properties를 참고 한다.
+
+데이터를 확인하여 보자!
+
+```
+SELECT * FROM USER;
+SELECT * FROM USER_ROLE;
+```
+
 ![h2콘솔2](https://user-images.githubusercontent.com/9576729/64584991-f4312d80-d3d1-11e9-8311-878fd2b9bf06.PNG)
+
 잘 생성 되었다!
 
 ### 3. JPA 구조 생성
 - Entity 를 작성한다.
 User Entity
 
-![userEntity](https://user-images.githubusercontent.com/9576729/64584779-15454e80-d3d1-11e9-98b4-159a9c0ec0d5.PNG)
+```
+package com.example.ormtest.entity;
+
+import jdk.jfr.Timestamp;
+import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.sql.Date;
+
+@Entity
+@Data
+public class User {
+
+    @Id
+    private String user_id;
+
+    private String name;
+
+    private String email;
+
+    private String address;
+
+    private Date created_at;
+
+    @Timestamp
+    private Date latest_login_at;
+
+}
+```
 
 UserRole Entity - 사용자 룰은 사용자테이블을 참고하기 때문에 해당 Entity를 가지고 있는 구조이다.
 
-![userRoleEntity](https://user-images.githubusercontent.com/9576729/64584813-3b6aee80-d3d1-11e9-8591-04f021b47d97.PNG)
+```
+package com.example.ormtest.entity;
+
+import jdk.jfr.Timestamp;
+import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import java.sql.Date;
+import java.util.List;
+
+@Entity
+@Data
+public class UserRole {
+
+    @Id
+    private String role_id;
+
+    private String user_id;
+
+    private String role;
+
+    @Timestamp
+    private Date authorized_at;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<User> user;
+}
+```
 
 - Repository 를 작성한다. 간단하게 User 테이블을 조회 하는 쿼리를 하나 작성하였다.
 
-![repository](https://user-images.githubusercontent.com/9576729/64585023-1925a080-d3d2-11e9-9f13-2dd04d7e580a.PNG)
+```
+package com.example.ormtest.repository;
+
+import com.example.ormtest.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, String> {
+
+    @Query("select u from User u")
+    List<Optional<User>> getUserList();
+
+}
+```
 
 레파지토리 인터페이스의 의미는
 ```sh
@@ -145,13 +242,47 @@ public interface 이름 extends JpaRepository <엔티티 ID 유형>
 ### 4. 테스트 코드 실행
 이제 기본적인 틀은 만들어 진것 같다. 방금 작성한 UserRepository 를 이용하여 간단하게 테스트 코드를 작성해 보자. 프로젝트의 테스트 코드에다 작성 하였다.
 
-![Test코드](https://user-images.githubusercontent.com/9576729/64585247-ef20ae00-d3d2-11e9-97a3-22fbd04252df.PNG)
+```
+package com.example.ormtest;
+
+import com.example.ormtest.entity.User;
+import com.example.ormtest.repository.UserRepository;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+import java.util.Optional;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class OrmtestApplicationTests {
+
+    private Logger logger = LoggerFactory.getLogger(OrmtestApplicationTests.class);
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Test
+    public void jpaQueryTest(){
+        List<Optional<User>> userList = userRepository.getUserList();
+        for(Optional<User> user : userList ){
+            logger.info("#### User Info : " + user);
+        }
+    }
+}
+```
 
 자 테스트 코드를 실행 하여 보자.
 
 ![테스트 결과](https://user-images.githubusercontent.com/9576729/64585323-4b83cd80-d3d3-11e9-95a1-240948ce42d6.PNG)
 
 ## Database 조회에 성공하였다!!
+실행 결과 맨 윗줄은 실행되는 SQL 문을 찍은 로그이다. application.properties의 spring.jpa.show-sql를 true 로 설정하였기 때문에 보이는 것이다.
 
-MyBatis 같은 프레임워크를 사용하는 것보다 훨씬 간단하고 심플하게 결과를 받아볼 수 있었다.
+결론은 MyBatis 같은 프레임워크를 사용하는 것보다 훨씬 간단하고 심플하게 결과를 받아볼 수 있었다.
 다음은 ORM 프레임 워크인 QueryDSL 을 사용하여 좀더 복잡한 쿼리 실행에 도전해 봐야겠다!
