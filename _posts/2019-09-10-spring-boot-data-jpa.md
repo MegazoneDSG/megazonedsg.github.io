@@ -143,7 +143,7 @@ SELECT * FROM USER_ROLE;
 잘 생성 되었다!
 
 ### 3. JPA 구조 생성
-- Entity 를 작성한다. 쉽게 테이블을 객체 형태로 만든다고 생각하면 된다.
+- Entity 를 작성한다. 쉽게 테이블을 객체 형태로 만든다고 생각하면 된다. 사용자는 여러룰을 가질수 있기 때문에 userRole 객체를 List 형태로 가지고 있을 수 있다.
 
 User Entity
 
@@ -185,7 +185,7 @@ public class User {
 }
 ```
 
-UserRole Entity - 사용자 룰은 사용자테이블을 참고하기 때문에 해당 Entity를 가지고 있는 구조이다.
+UserRole Entity
 
 ```
 package com.example.ormtest.entity;
