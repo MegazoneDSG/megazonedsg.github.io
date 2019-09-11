@@ -22,7 +22,7 @@ introduction: JPA를 사용하여 간단히 조회를 해보자!
 
 ### 1. 프로젝트 생성
 - New Project
-![프로젝트생성](https://user-images.githubusercontent.com/9576729/64584164-b252b800-d3ce-11e9-9b72-6079c78a1a2d.PNG)
+![프로젝트생성](https://user-images.githubusercontent.com/9576729/64658915-3c089100-d474-11e9-8afb-65164dc56579.PNG)
 ![프로젝트생성2](https://user-images.githubusercontent.com/9576729/64658880-1bd8d200-d474-11e9-8f91-b327c4b3e2cb.PNG)
 - Springboot Component 선택
 ![프로젝트생성3](https://user-images.githubusercontent.com/9576729/64584227-e332ed00-d3ce-11e9-8786-2f25aa0b7bbb.PNG)
