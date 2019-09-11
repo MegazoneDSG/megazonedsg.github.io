@@ -27,7 +27,7 @@ introduction: JPA를 사용하여 간단히 조회를 해보자!
 - Springboot Component 선택
 ![프로젝트생성3](https://user-images.githubusercontent.com/9576729/64584227-e332ed00-d3ce-11e9-8786-2f25aa0b7bbb.PNG)
 
-Spring Data JPA 와 테스트 용도로 쓸 H2 Database를 선택 하였다. 그리고 별도로 ***Spring Web Services***, ***Thymeleaf** 와 ***lombok*** 을 추가 하였다.
+Spring Data JPA 와 테스트 용도로 쓸 H2 Database를 선택 하였다. 그리고 별도로 ***Spring Web Services***, ***Thymeleaf*** 와 ***lombok*** 을 추가 하였다.
 
 ### 2. H2 Database 설정
 - application.properties
