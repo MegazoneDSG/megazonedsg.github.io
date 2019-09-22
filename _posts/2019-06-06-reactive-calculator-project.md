@@ -4,7 +4,8 @@ author: soda1127
 title: "1-03.RxKotlin으로 계산기 프로그램 만들기. 그리고 정리"
 description: RxKotlin으로 계산기 프로그램 만들어봅니다. 그리고 리액티브 프로그래밍이 무엇인지 정리해봅니다.
 image: 'https://i.imgur.com/QfID9Fe.png'
-category: 'programming'
+categories:
+- programming
 date: 2019-06-06 21:00:00
 tags:
 - kotlin

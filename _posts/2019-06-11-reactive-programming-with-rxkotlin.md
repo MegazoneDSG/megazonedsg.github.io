@@ -4,7 +4,8 @@ author: soda1127
 title: "2-00.RxKotlin을 사용한 함수형 프로그래밍"
 description: 더 발전된 방식으로 RxKotlin을 이용하여 리액티브 프로그래밍을 해봅시다.
 image: 'https://i.imgur.com/pr6E1OC.jpg'
-category: 'programming'
+categories:
+- programming
 date: 2019-06-11 19:00:00
 tags:
 - kotlin

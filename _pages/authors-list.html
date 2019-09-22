@@ -1,0 +1,75 @@
+---
+title: "Authors"
+layout: default
+permalink: "/authors-list.html"
+---
+
+<div class="container">
+    <h4 class="font-weight-bold spanborder"><span>{{page.title}} | {{authorId}}</span></h4>
+    <div class="row gap-y listrecent listrecent listauthor">
+        {% for author in site.authors %}
+        <div class="col-lg-6 mb-4">
+            <div class="p-4 border rounded">
+                <div class="row">
+                    <div class="col-md-3 mb-4 mb-md-0">
+                        {% if author[1].avatar %}
+                        <img alt="{{ author[1].name }}" src="{{ author[1].avatar }}" class="rounded-circle" height="80"
+                             width="80">
+                        {% else %}
+                        <img alt="{{ author[1].name }}" src="/assets/img/avatar1.jpg" class="rounded-circle" height="80"
+                             width="80">
+                        {% endif %}
+
+                    </div>
+                    <div class="col-md-9">
+                        <div>
+                            <h4 class="text-dark mb-0"> {{ author[1].name }} </h4>
+                            <div class="excerpt">{{ author[1].bio }}</div>
+                        </div>
+                        <div class="icon-block mt-3 d-flex justify-content-between">
+                            <p>
+                                {% if author[1].github_username %}
+                                <a itemprop="github" href="https://github.com/{{ author[1].github_username }}" title="Github">
+                                    <svg><use xlink:href="#icon-github"></use></svg>
+                                </a>
+                                {% endif %}
+                                {% if author[1].facebook_username %}
+                                <a itemprop="facebook" href="https://www.facebook.com/{{ author[1].facebook_username }}" title="Facebook">
+                                    <svg><use xlink:href="#icon-facebook"></use></svg>
+                                </a>
+                                {% endif %}
+                                {% if author[1].twitter_username %}
+                                <a itemprop="twitter" href="https://twitter.com/{{ author[1].twitter_username }}" title="Twitter">
+                                    <svg><use xlink:href="#icon-twitter"></use></svg>
+                                </a>
+                                {% endif %}
+                                {% if author[1].medium_username %}
+                                <a itemprop="medium" href="https://medium.com/@{{ author[1].medium_username }}" title="Medium">
+                                    <svg><use xlink:href="#icon-medium"></use></svg>
+                                </a>
+                                {% endif %}
+                                {% if author[1].instagram_username %}
+                                <a itemprop="instagram" href="https://www.instagram.com/{{ author[1].instagram_username }}" title="Instagram">
+                                    <svg><use xlink:href="#icon-instagram"></use></svg>
+                                </a>
+                                {% endif %}
+                                {% if author[1].linkedin_username %}
+                                <a itemprop="linkedin" href="https://www.linkedin.com/in/{{ author[1].linkedin_username }}" title="LinkedIn">
+                                    <svg><use xlink:href="#icon-linkedin"></use></svg>
+                                </a>
+                                {% endif %}
+                            </p>
+                            <!--<div>-->
+                                <!--<a target="_blank" href="{{ author[1].twitter }}"><i class="fab fa-twitter text-muted"-->
+                                                                                     <!--aria-hidden="true"></i></a> &nbsp;-->
+                                <!--<a target="_blank" href="{{ author[1].site }}"><i class="fa fa-globe text-muted"-->
+                                                                                  <!--aria-hidden="true"></i></a> &nbsp;-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

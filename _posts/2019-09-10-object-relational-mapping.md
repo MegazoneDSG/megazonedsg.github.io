@@ -5,7 +5,8 @@ notification: true
 title: "Object Relation Mapping"
 description: 객체 관계 매핑에 대한 스터디 내용을 정리하였습니다.
 image: https://user-images.githubusercontent.com/9576729/64586845-7fadbd00-d3d8-11e9-87c3-8c950c6b6a22.jpg
-category: 'programming'
+categories:
+- programming
 date: 2019-09-10 12:11:00
 tags:
 - java

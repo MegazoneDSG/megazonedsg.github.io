@@ -4,8 +4,9 @@ author: seungpilpark
 notification: true
 title: "AWS ACM 인증서 만료 방지하기"
 description: AWS 인증서가 만료되어 시스템 장애를 예방하기 위해 작성하는 글.
-image:
-category: 'programming'
+image: 'https://user-images.githubusercontent.com/13447690/65383626-22f4bf80-dd53-11e9-8048-42a632739742.jpg'
+categories:
+- programming
 date: 2019-09-07 01:05:00
 tags:
 - aws

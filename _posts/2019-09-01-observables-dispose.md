@@ -4,7 +4,8 @@ author: soda1127
 title: "3-01.옵저버블을 구독했을 때 해제하는 방법"
 description: 옵저버블을 구독힌 이후 중지하는 방법에 대해 이해 해봅시다.
 image: 'https://imgur.com/AIthrBr.png'
-category: 'programming'
+categories:
+- programming
 date: 2019-09-01 01:05:00
 tags:
 - kotlin

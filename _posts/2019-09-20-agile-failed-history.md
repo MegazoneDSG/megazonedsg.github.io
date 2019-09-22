@@ -4,8 +4,9 @@ author: seungpilpark
 notification: true
 title: "Devops 문화 정착에 실패했던 경험담"
 description: Devops 문화 정착에 실패했던 경험담을 남기는 글.
-image:
-category: 'post'
+image: 'https://user-images.githubusercontent.com/13447690/65383664-8b43a100-dd53-11e9-9c86-bb74bc0f3306.png'
+categories: 
+- post
 date: 2019-09-20 09:05:00
 tags:
 - devops

@@ -4,7 +4,8 @@ author: soda1127
 title: "1-01.리액티브 프로그래밍의 소개"
 description: 리액티브 프로그래밍이란 무엇일까요?
 image: 'https://i.imgur.com/klrxZcG.png'
-category: 'programming'
+categories:
+- programming
 date: 2019-06-05 14:54:00
 tags:
 - kotlin

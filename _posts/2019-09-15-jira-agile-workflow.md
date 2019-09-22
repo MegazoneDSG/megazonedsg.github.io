@@ -4,8 +4,9 @@ author: seungpilpark
 notification: true
 title: "JIRA Agile Software Development"
 description: 지라 애자일 워크플로우를 공부하며 남기는 글.
-image:
-category: 'programming'
+image: 'https://user-images.githubusercontent.com/13447690/65383664-8b43a100-dd53-11e9-9c86-bb74bc0f3306.png'
+categories:
+- programming
 date: 2019-09-15 23:05:00
 tags:
 - jira

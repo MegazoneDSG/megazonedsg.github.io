@@ -5,7 +5,8 @@ notification: true
 title: "Spring-boot-data-jpa Example"
 description: JPA를 사용하여 간단히 조회를 해보자!
 image: https://user-images.githubusercontent.com/9576729/64586845-7fadbd00-d3d8-11e9-87c3-8c950c6b6a22.jpg
-category: 'tutorial'
+categories:
+- tutorial
 date: 2019-09-10 12:11:00
 tags:
 - java
