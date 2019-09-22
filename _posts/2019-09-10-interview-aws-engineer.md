@@ -6,7 +6,7 @@ title: "메가존 클라우드 엔지니어 분과 인터뷰"
 description: 메가존 클라우드 엔지니어 분과 인터뷰 하고 남기는 글.
 image: 'https://user-images.githubusercontent.com/13447690/65383626-22f4bf80-dd53-11e9-8048-42a632739742.jpg'
 categories:
-- programming
+- essay
 date: 2019-09-10 23:05:00
 tags:
 - aws
