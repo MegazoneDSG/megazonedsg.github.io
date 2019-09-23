@@ -38,7 +38,6 @@ authors:
   sondayeon:
     name: 손다연
     bio: 사회공헌을 위한 개발을 좋아합니다. Cloud Native 개발자를 목표로 트레이닝 중입니다.
-
     email: sondayeon@mz.co.kr
     github_username: it-dayeon
     facebook_username:
@@ -46,10 +45,17 @@ authors:
   byeongcheonmun:
     name: 문병천
     bio: 그냥저냥 이것저것 모아두는 습성을 가졌습니다.
-
     email: munbc@mz.co.kr
     github_username: munbc8308
     facebook_username:
+    
+  Lukoh:
+    name: 남걸호
+    bio: 모바일팀
+    email: namkulho@mz.co.kr
+    github_username: Lukoh-MZ
+    facebook_username:
+  
 
 # Defaults
 defaults:
