@@ -18,11 +18,11 @@ twitter_text: The responses to the Foldable Android Device
 ## Make your app resizable
 
 You should ensure that your app works in multi-window mode and with dynamic resizing. 
-Do this by setting 'resizeableActivity=true'. This provides maximum compatibility with whatever form factors and 
+Do this by setting `resizeableActivity=true`. This provides maximum compatibility with whatever form factors and 
 environments your app might encounter (like foldables, desktop mode, or freeform windows). 
 Test your app's behavior in split-screen or with a Foldable emulator.
 
-If your app sets 'resizeableActivity=false', this tells the platform it doesn't support multi-window. 
+If your app sets `resizeableActivity=false`, this tells the platform it doesn't support multi-window. 
 The system may still resize your app or put it in multi- window mode, but compatibility is implemented by applying the same configuration to all the components in the app (including all of its Activities, Services, and more). 
 In some cases, major changes (like a display size change) might restart the process rather than change the configuration.
 For example, the activity below has set 'resizableActivity=false' along with a maxAspectRatio. When the device is unfolded, the activity configuration, size, and aspect ratio are maintained by putting the app in compatibility mode.
