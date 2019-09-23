@@ -37,4 +37,5 @@ To be compatible with as many devices as possible, you should test your apps for
 If you cannot support some of those ratios, you can use the maxAspectRatio (as before), as well as minAspectRatio to indicate the highest and lowest ratios your app can handle. 
 In cases with screens that exceed these limits, your app might be put in compatibility mode.
 When there are five icons in the bottom navigation view devices running Android 10 (API level 29) and higher are guaranteed a minimum touch target size of 2 inches. 
+
 See the [Compatibility Definition Document](https://source.android.com/compatibility/cdd).
