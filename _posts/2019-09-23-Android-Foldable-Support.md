@@ -4,6 +4,7 @@ author: Lukoh
 notification: true
 title: "The responses to the Foldable Android Device"
 description: The responses to the Foldable Android Device
+image: "https://user-images.githubusercontent.com/13447690/65409002-9fee6a80-de21-11e9-9d96-35bccc00e08d.png"
 categories: 
 - Information
 date: 2019-09-23 16:00:00
