@@ -6,20 +6,20 @@ description: "4# Service Rolling 테스트하기"
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
 - tutorial
-date: 2019-09-01 01:05:00
+date: 2019-08-19 01:05:00
 tags:
 - Docker
 - Docker Swarm
-introduction: 안녕하세요.
-              챕터 3에서 배운 Service가 잘 생성되었나요?
-              이번 챕터는 서비스를 Rolling test 해보도록 합시다.
+introduction: Docker를 사용하여 서비스를 Rolling test 해보자.
 ---
 
 # 4# Service Rolling 테스트하기
 
 안녕하세요.
 
-챕터 #3에서 배운 Service가 잘 생성되었나요?
+DSG 웹서비스부문 개발 2팀 사원 손다연입니다.
+
+[챕터 3]에서 배운 Service가 잘 생성되었나요?
 
 이번 챕터는 서비스를 Rolling test 해보도록 합시다.
 
