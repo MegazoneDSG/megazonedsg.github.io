@@ -1,27 +1,30 @@
 ---
 layout: post
 author: sondayeon
-title: "3# Node에서 Service 생성하기"
+notification: false
+title: "Node에서 Service 생성하기 [3/6]"
 description: "3# Node에서 Service 생성하기"
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
 - tutorial
-date: 2019-09-01 01:05:00
+date: 2019-08-13 01:05:00
 tags:
+- AWS
 - Docker
 - Docker Swarm
-introduction: 안녕하세요.
-              챕터 2에서 배운 Docker-Swarm이 잘 생성되었나요?
-              이번 챕터는 서비스를 만든 후에, Docker-Swarm으로 잘 분산이 되는지 확인해보도록 합시다.
+introduction: Docker-Swarm으로 Node가 잘 분산이 되는지 확인해보자.
+
 ---
 
-# 3# Node에서 Service 생성하기
+# Node에서 Service 생성하기
 
 안녕하세요.
 
-챕터 #2에서 배운 Docker-Swarm이 잘 생성되었나요?
+DSG 웹서비스부문 개발 2팀 사원 손다연입니다.
 
-이번 챕터는 서비스를 만든 후에, Docker-Swarm으로 잘 분산이 되는지 확인해보도록 합시다.
+[챕터 2]에서 배운 Docker-Swarm이 잘 생성되었나요?
+
+이번 챕터는 서비스를 만든 후에, Docker-Swarm으로 Node가 잘 분산이 되는지 확인해보도록 합시다.
 
 ---
 
@@ -128,8 +131,10 @@ no such service: web
 
 ---
 
-`Service`를 만드는 기본 단계를 모두 완료하셨습니다!     
-다음 단계에서는 오늘 만든 Service를 가지고 **Rolling Test**를 하는 방법에 대해 배워보겠습니다.
+`Service`를 만드는 기본 단계를 모두 완료하셨습니다!    
+
+다음 단계에서는 오늘 만든 Service를 사용하여          
+**Rolling Test**를 하는 방법에 대해 배워보겠습니다.
 
 > `배운 내용 복습 하기`   
 [1. 서비스 만들기](#1-서비스-만들기)  
