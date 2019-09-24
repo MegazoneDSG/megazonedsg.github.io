@@ -3,11 +3,11 @@ layout: post
 author: sondayeon
 notification: false
 title: "Docker Service 상태 전환하기 [5/6]"
-description: "5# Service 상태 전환하기"
+description: "5# Docker Service 상태 전환하기"
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
 - tutorial
-date: 2019-09-01 01:05:00
+date: 2019-08-26 01:05:00
 tags:
 - Docker
 - Docker Swarm
@@ -16,7 +16,7 @@ tags:
 introduction: Docker 서비스의 상태를 Drain, Down으로 전환해 보도록 합시다.
 ---
 
-# 5# Service 상태 전환하기
+# Docker Services 상태 전환하기
 
 안녕하세요.
 
