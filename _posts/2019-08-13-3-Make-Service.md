@@ -2,8 +2,8 @@
 layout: post
 author: sondayeon
 notification: false
-title: "Node에서 Service 생성하기 [3/6]"
-description: "3# Node에서 Service 생성하기"
+title: "AWS EC2 인스턴스에서 Docker Services 생성하기 [3/6]"
+description: "3# AWS EC2 인스턴스에서 Docker Services 생성하기"
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
 - tutorial
@@ -24,7 +24,8 @@ DSG 웹서비스부문 개발 2팀 사원 손다연입니다.
 
 [챕터 2]에서 배운 Docker-Swarm이 잘 생성되었나요?
 
-이번 챕터는 서비스를 만든 후에, Docker-Swarm으로 `Node가 잘 분산이 되는지 확인`해보도록 합시다.
+이번 챕터는 `Docker Services`를 만든 후에,      
+Docker-Swarm으로 `Node가 잘 분산이 되는지 확인`해보도록 합시다.
 
 ---
 
@@ -131,7 +132,7 @@ no such service: web
 
 ---
 
-`Service`를 만드는 기본 단계를 모두 완료하셨습니다!    
+`Docker Service`를 만드는 기본 단계를 모두 완료하셨습니다!    
 
 다음 단계에서는 오늘 만든 Service를 사용하여          
 **Rolling Test**를 하는 방법에 대해 배워보겠습니다.
