@@ -69,6 +69,8 @@ ID                  NAME                IMAGE               NODE                
 pfxfmfhouu7h        web.1               httpd:latest        aws-node1           Running             Running 3 minutes ago               
 ```
 
+---
+
 ## 2. 서비스 복제하기
 
 #### 사용법
@@ -102,6 +104,8 @@ pfxfmfhouu7h        web.1               httpd:latest        aws-node1           
 ankki0tclob3        web.2               httpd:latest        aws-node3           Running             Running 28 seconds ago
 mkdc14bvys8l        web.3               httpd:latest        aws-node2           Running             Running 28 seconds ago               
 ```
+
+---
 
 ## 3. 서비스 지우기
 
@@ -144,7 +148,3 @@ no such service: web
 
 > `이전 단계로 돌아가기` : [Docker-Swarm 만들기](/2-Make-Swarm)     
 > `다음 단계로 넘어가기` : [서비스 Rolling-Test하기](/4-Rolling-Test)
-
-
-
-
