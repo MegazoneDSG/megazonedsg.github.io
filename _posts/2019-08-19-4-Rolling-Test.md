@@ -15,7 +15,7 @@ tags:
 introduction: Docker를 사용하여 서비스를 Rolling test 해보자.
 ---
 
-# Service Rolling 테스트하기
+# Docker Services Rolling 테스트하기
 
 안녕하세요.
 
@@ -23,7 +23,7 @@ DSG 웹서비스부문 개발 2팀 사원 손다연입니다.
 
 [챕터 3]에서 배운 Service가 잘 생성되었나요?
 
-이번 챕터는 서비스를 `Rolling test` 해보도록 합시다.
+이번 챕터는 Docker 서비스를 `Rolling test` 해보도록 합시다.
 
 ---
 
