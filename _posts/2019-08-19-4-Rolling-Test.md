@@ -1,13 +1,15 @@
 ---
 layout: post
 author: sondayeon
-title: "4# Service Rolling 테스트하기"
+notification : false
+title: "Service Rolling 테스트하기 [3/6]"
 description: "4# Service Rolling 테스트하기"
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
 - tutorial
 date: 2019-08-19 01:05:00
 tags:
+- AWS
 - Docker
 - Docker Swarm
 introduction: Docker를 사용하여 서비스를 Rolling test 해보자.
