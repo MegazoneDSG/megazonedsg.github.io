@@ -12,7 +12,7 @@ tags:
 - AWS
 - Docker
 - Docker Swarm
-introduction: Docker-Swarm으로 Node가 잘 분산이 되는지 확인해보자.
+introduction: Docker Service를 생성하고 Node가 잘 분산이 되는지 확인해보자.
 
 ---
 
@@ -24,7 +24,7 @@ DSG 웹서비스부문 개발 2팀 사원 손다연입니다.
 
 [챕터 2]에서 배운 Docker-Swarm이 잘 생성되었나요?
 
-이번 챕터는 서비스를 만든 후에, Docker-Swarm으로 Node가 잘 분산이 되는지 확인해보도록 합시다.
+이번 챕터는 서비스를 만든 후에, Docker-Swarm으로 `Node가 잘 분산이 되는지 확인`해보도록 합시다.
 
 ---
 
