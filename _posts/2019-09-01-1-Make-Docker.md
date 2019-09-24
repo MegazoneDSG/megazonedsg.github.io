@@ -15,17 +15,17 @@ tags:
 introduction: AWS에서 EC2 인스턴스를 사용해서 `Docker`를 설치해보자.
 ---
 
-# 1# AWS에서 EC2 인스턴스에 Docker 설치하기
+# AWS에서 EC2 인스턴스에 Docker 설치하기
 
 안녕하세요.
 
-DSG부문 개발2팀 사원 손다연입니다. :octocat: 
+DSG부문 개발2팀 사원 손다연입니다.
 
-오늘은 AWS에서 EC2 인스턴스를 사용해서 :star:**Docker**:star:를 설치하는 방법을 배워보겠습니다.
+오늘은 AWS에서 EC2 인스턴스를 사용해서 **Docker**를 설치하는 방법을 배워보겠습니다.
 
 우선 사용 전에, OS가 `Windows`인 경우에는 가상머신을 사용하는 방법을 권장드립니다.
 
-:point_right: 가상머신 설치하기 : [VMware install](https://m.blog.naver.com/PostView.nhn?blogId=bellship99&logNo=221164040584&proxyReferer=https%3A%2F%2Fwww.google.com%2F) 
+> 가상머신 설치하기 : [VMware install](https://m.blog.naver.com/PostView.nhn?blogId=bellship99&logNo=221164040584&proxyReferer=https%3A%2F%2Fwww.google.com%2F) 
 
 ---
 
@@ -59,11 +59,11 @@ AWS 사이트에 들어가서 새로운 EC2 인스턴스를 하나 만들어 봅
 
 ---
 
-:bulb: **TIP 1**     
-키 페어는 기존에 쓰시던 것을 사용해도 되며, 새로운 키 페어를 생성하신 경우엔 파일을 잘 보관해주시길 바랍니다.  
+> **TIP 1**     
+> 키 페어는 기존에 쓰시던 것을 사용해도 되며, 새로운 키 페어를 생성하신 경우엔 파일을 잘 보관해주시길 바랍니다.  
 
-:bulb: **TIP 2**        
-가상머신을 사용하여 작업할 경우에는 가상머신 안에 키 페어 파일을 복사해서 넣어두셔야 합니다.
+> **TIP 2**        
+> 가상머신을 사용하여 작업할 경우에는 가상머신 안에 키 페어 파일을 복사해서 넣어두셔야 합니다.
 
 ---
 
@@ -249,8 +249,8 @@ $ docker-machine create --driver amazonec2 [node-name]
 [ec2-user@ip-172-31-18-132 ~]$ docker-machine create --driver amazonec2 aws-node2
 [ec2-user@ip-172-31-18-132 ~]$ docker-machine create --driver amazonec2 aws-node3
 ```
-:bulb: **TIP 3**     
-하나 생성하는데 시간이 조금 소요되기 때문에, 창을 3개를 켜 놓은 후 생성하면 시간이 단축됩니다.  
+> **TIP 3**     
+> 하나 생성하는데 시간이 조금 소요되기 때문에, 창을 3개를 켜 놓은 후 생성하면 시간이 단축됩니다.  
 
 ```
 [ec2-user@ip-172-31-18-132 ~]$ docker-machine ls
