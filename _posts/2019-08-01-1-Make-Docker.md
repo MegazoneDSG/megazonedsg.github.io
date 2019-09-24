@@ -12,7 +12,7 @@ tags:
 - AWS
 - Docker
 - Docker-machine
-introduction: AWS에서 EC2 인스턴스를 사용해서 `Docker`를 설치해보자.
+introduction: AWS에서 EC2 인스턴스를 사용해서 Docker를 설치해보자.
 ---
 
 # AWS에서 EC2 인스턴스에 Docker 설치하기
@@ -21,7 +21,7 @@ introduction: AWS에서 EC2 인스턴스를 사용해서 `Docker`를 설치해�
 
 DSG 웹서비스부문 개발 2팀 사원 손다연입니다.
 
-오늘은 AWS에서 EC2 인스턴스를 사용해서 **Docker**를 설치하는 방법을 배워보겠습니다.
+오늘은 AWS에서 EC2 인스턴스를 사용해서 `Docker`를 설치하는 방법을 배워보겠습니다.
 
 우선 사용 전에, OS가 `Windows`인 경우에는 가상머신을 사용하는 방법을 권장드립니다.
 
