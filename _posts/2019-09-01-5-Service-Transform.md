@@ -1,7 +1,8 @@
 ---
 layout: post
 author: sondayeon
-title: "5# Service 상태 전환하기"
+notification: false
+title: "Docker Service 상태 전환하기 [5/6]"
 description: "5# Service 상태 전환하기"
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
@@ -10,9 +11,9 @@ date: 2019-09-01 01:05:00
 tags:
 - Docker
 - Docker Swarm
-introduction: 안녕하세요.
-              챕터 4에서 배운 Service로 Rolling Test를 잘 해보셨나요?
-              이번 챕터는 서비스의 상태를 전환해 보도록 합시다.
+- Drain
+- Down
+introduction: Docker 서비스의 상태를 Drain, Down으로 전환해 보도록 합시다.
 ---
 
 # 5# Service 상태 전환하기
@@ -21,7 +22,7 @@ introduction: 안녕하세요.
 
 챕터 #4에서 배운 Service로 Rolling Test를 잘 해보셨나요?
 
-이번 챕터는 서비스의 상태를 전환해 보도록 합시다.
+이번 챕터는 `Docker 서비스 상태를 전환`해 보도록 합시다.
 
 ---
 
@@ -40,7 +41,7 @@ Node를 유지보수하기 위해서, Node에서 실행되는 작업을 빼내�
 여러분께서는 이 작업을 안하셔도 괜찮습니다.
  
  > 참고 : 챕터 #3의 `3.서비스 지우기`와 `1. 서비스 만들기`   
- > [챕터 #3 바로가기](https://github.com/It-dayeon/dockerswarm/blob/master/3-Make-Service.md)
+ > [챕터 #3 바로가기](/3-Make-Service)
 
 ---
 
