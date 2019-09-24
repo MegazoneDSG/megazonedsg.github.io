@@ -2,8 +2,8 @@
 layout: post
 author: sondayeon
 notification: false
-title: "Docker Service 상태 전환하기 [5/6]"
-description: "5# Docker Service 상태 전환하기"
+title: "Docker Services 상태 전환하기 [5/6]"
+description: "5# Docker Services 상태 전환하기"
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
 - tutorial
@@ -20,7 +20,9 @@ introduction: Docker 서비스의 상태를 Drain, Down으로 전환해 보도�
 
 안녕하세요.
 
-챕터 #4에서 배운 Service로 Rolling Test를 잘 해보셨나요?
+DSG 웹서비스부문 개발 2팀 사원 손다연입니다.
+
+[챕터 4]에서 배운 Service로 Rolling Test를 잘 해보셨나요?
 
 이번 챕터는 `Docker 서비스 상태를 전환`해 보도록 합시다.
 
