@@ -132,9 +132,9 @@ no such service: web
 
 ---
 
-`Docker Service`를 만드는 기본 단계를 모두 완료하셨습니다!    
+`Docker Services`를 만드는 기본 단계를 모두 완료하셨습니다!    
 
-다음 단계에서는 오늘 만든 Service를 사용하여          
+다음 단계에서는 오늘 만든 Services를 사용하여          
 **Rolling Test**를 하는 방법에 대해 배워보겠습니다.
 
 > `배운 내용 복습 하기`   
