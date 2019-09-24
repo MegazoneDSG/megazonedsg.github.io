@@ -179,6 +179,8 @@ gmj46hh8xkdb        ping.5              alpine:latest       aws-node3           
 ```
 다음과 같이, `ping.5`라는 새로운 작업을 `aws-node3`이 일을 받아 `Running` 중인 것을 볼 수 있습니다. 
 
+---
+
 ## 2. Down 상태로 전환하기
 
 이번에는 `aws-node2`를 강제로 중지시켜보겠습니다.
