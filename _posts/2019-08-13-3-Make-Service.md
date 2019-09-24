@@ -2,7 +2,7 @@
 layout: post
 author: sondayeon
 notification: false
-title: "AWS EC2 인스턴스에서 Docker Services 생성하기 [3/6]"
+title: "AWS EC2 인스턴스에 Docker Services 생성하기 [3/6]"
 description: "3# AWS EC2 인스턴스에서 Docker Services 생성하기"
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
@@ -16,7 +16,7 @@ introduction: Docker Service를 생성하고 Node가 잘 분산이 되는지 확
 
 ---
 
-# Node에서 Service 생성하기
+# AWS EC2 인스턴스에 Docker Services 생성하기
 
 안녕하세요.
 
