@@ -1,27 +1,31 @@
 ---
 layout: post
 author: sondayeon
-title: "1# AWS에서 EC2 인스턴스에 Docker 설치하기"
-description: 1# AWS에서 EC2 인스턴스에 Docker 설치하기
+notification: false
+title: "AWS EC2 인스턴스에 Docker 설치하기 [1/6]"
+description: 1# AWS EC2 인스턴스에 Docker 설치하기
 image: 'https://user-images.githubusercontent.com/13447690/64077423-8323b300-cd0b-11e9-8588-fb4fa9c6a294.png'
 categories:
 - tutorial
 date: 2019-09-01 01:05:00
 tags:
+- AWS
 - Docker
-- Docker Swarm
-introduction: AWS에서 EC2 인스턴스를 사용해서 `Docker-Swarm`을 만드는 방법을 배워보겠습니다.
+- Docker-machine
+introduction: AWS에서 EC2 인스턴스를 사용해서 `Docker`를 설치해보자.
 ---
 
 # 1# AWS에서 EC2 인스턴스에 Docker 설치하기
 
 안녕하세요.
 
-AWS에서 EC2 인스턴스를 사용해서 `Docker-Swarm`을 만드는 방법을 배워보겠습니다.
+DSG부문 개발2팀 사원 손다연입니다. :octocat: 
+
+오늘은 AWS에서 EC2 인스턴스를 사용해서 :star:**Docker**:star:를 설치하는 방법을 배워보겠습니다.
 
 우선 사용 전에, OS가 `Windows`인 경우에는 가상머신을 사용하는 방법을 권장드립니다.
 
-> 가상머신 설치하기 :  [VMware install](https://m.blog.naver.com/PostView.nhn?blogId=bellship99&logNo=221164040584&proxyReferer=https%3A%2F%2Fwww.google.com%2F) 
+:point_right: 가상머신 설치하기 : [VMware install](https://m.blog.naver.com/PostView.nhn?blogId=bellship99&logNo=221164040584&proxyReferer=https%3A%2F%2Fwww.google.com%2F) 
 
 ---
 
@@ -42,6 +46,8 @@ AWS 사이트에 들어가서 새로운 EC2 인스턴스를 하나 만들어 봅
 
 `서울 리전`에서 [인스턴스 시작] 버튼을 눌러 인스턴스를 만들겠습니다.
 
+---
+
 | 구성 | <center>값</center>|
 | :---: |--- |
 | AMI | Amazon Linux AMI 2018.03.0 (HVM) |
@@ -51,8 +57,15 @@ AWS 사이트에 들어가서 새로운 EC2 인스턴스를 하나 만들어 봅
 | 태그 추가 | 키: Name, 값: AWS-Docker |     
 | 보안 그룹 구성 | 새 보안 그룹 생성 후,  모든 트래픽 개방 |
 
-> 키 페어는 기존에 쓰시던 거를 사용해도 되며, 새로운 키 페어를 생성하신 경우엔 파일을 잘 보관해주시길 바랍니다.  
-> 가상머신을 사용하여 작업할 경우에는 가상머신 안에 키 페어 파일을 복사해서 넣어두셔야 합니다.
+---
+
+:bulb: **TIP 1**     
+키 페어는 기존에 쓰시던 것을 사용해도 되며, 새로운 키 페어를 생성하신 경우엔 파일을 잘 보관해주시길 바랍니다.  
+
+:bulb: **TIP 2**        
+가상머신을 사용하여 작업할 경우에는 가상머신 안에 키 페어 파일을 복사해서 넣어두셔야 합니다.
+
+---
 
 ## 2. SSH를 통해 EC2 인스턴스에 접속하기
 
@@ -83,10 +96,12 @@ https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
 8 package(s) needed for security, out of 11 available
 Run "sudo yum update" to apply all updates.
 ```
+---
   
 ## 3. 접속한 인스턴스 안에 Docker를 설치하기 
 
-위의 예시에서 연결한 후에 나온 문구인 `Run "sudo yum update" to apply all updates.` 처럼  
+위의 예시에서 연결한 후에 나온 문구인       
+`Run "sudo yum update" to apply all updates.` 처럼        
 apply 모두를 업데이트 한 후에 docker를 설치해보도록 하겠습니다.
 
 #### Docker 설치하기
@@ -119,6 +134,7 @@ Docker version 18.09.1, build 4c52b90
 ```
 [ec2-user@ip-172-31-18-132 ~]$ sudo usermod -aG docker ec2-user
 ```
+---
 
 ## 4. Docker-compose 설치하기
 
@@ -144,18 +160,20 @@ Docker version 18.09.1, build 4c52b90
 docker-compose version 1.25.0-rc2, build 661ac20e
 ```
 
+---
+
 ## 5. Docker-machine 설치하기
 
 사용하는 운영체제에 따라서 설치하는 방법이 다릅니다.
 
-- MAC OS를 실행중인 경우
+- `MAC OS`를 실행중인 경우
 
 ```
 $ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
 curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/usr/local/bin/docker-machine &&
 chmod +x /usr/local/bin/docker-machine
 ```
-- Linux를 실행중인 경우
+- `Linux`를 실행중인 경우
 
 ```
 $ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
@@ -163,7 +181,7 @@ curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
 sudo install /tmp/docker-machine /usr/local/bin/docker-machine
 ```
 
-- Git Bash로 Windows를 실행하는 경우
+- Git Bash로 `Windows`를 실행하는 경우
 
 ```
 $ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
@@ -181,10 +199,13 @@ chmod +x "$HOME/bin/docker-machine.exe"
 docker-machine version 0.16.0, build 702c267f
 ```
 
+---
+
 ##  6. Docker-machine으로 AWS 드라이버 사용하기
 
 우선 AWS를 드라이버로 사용하기 위하여, 환경변수를 추가하여보겠습니다.  
-AWS CLI가 AWS와 상호 작용하기 위해 사용하는 설정을 구성해보도록 하겠습니다.
+
+AWS CLI가 AWS와 상호 작용하기 위해 사용하는 설정을 구성하겠습니다.
 
 #### 사용법
 
@@ -208,6 +229,8 @@ Default output format [None]:
 아이디와 키를 입력하였고, 지역은 서울리전을 입력하였습니다.  
 Output format은 지정하지 않고 `엔터키` 를 눌러서 `none` 상태를 유지하였습니다.
 
+---
+
 ##  7. Docker-machine으로 EC2 인스턴스 노드 생성하기
 
 Docker-machine을 사용해서 인스턴스 노드를 생성해보겠습니다.  
@@ -226,7 +249,8 @@ $ docker-machine create --driver amazonec2 [node-name]
 [ec2-user@ip-172-31-18-132 ~]$ docker-machine create --driver amazonec2 aws-node2
 [ec2-user@ip-172-31-18-132 ~]$ docker-machine create --driver amazonec2 aws-node3
 ```
-> Tip: 하나 생성하는데 시간이 조금 소요되기 때문에, 창을 3개를 켜 놓은 후 생성하면 시간이 단축됩니다.  
+:bulb: **TIP 3**     
+하나 생성하는데 시간이 조금 소요되기 때문에, 창을 3개를 켜 놓은 후 생성하면 시간이 단축됩니다.  
 
 ```
 [ec2-user@ip-172-31-18-132 ~]$ docker-machine ls
@@ -240,7 +264,7 @@ aws-node3   -        amazonec2   Running   tcp://54.174.125.199:2376           v
 
 ---
 
-도커를 설치하고 노드를 생성하는 기본 단계를 모두 완료하셨습니다!  
+도커를 설치하고 노드를 생성하는 기본 단계를 모두 완료하셨습니다!    
 다음 단계에서는 방금 생성한 노드를 연결하는 **Docker-Swarm**을 만드는 방법에 대해서 배워보겠습니다.
 
 > `배운 내용 복습 하기`    
