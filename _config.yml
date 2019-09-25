@@ -64,6 +64,25 @@ authors:
     github_username: MinjaeGhim
     facebook_username:    
 
+  YoungjuCha:
+    name: 차영주
+    bio: 모바일 개발자입니다.
+    email: chayj@mz.co.kr
+    github_username: youngjucha
+
+  insupark83:
+    name: 박인수
+    bio: 배우는걸 좋아하는 개발자
+    email: isp8373@naver.com
+    github_username: insupark83
+    facebook_username:
+
+  HYGill:
+    name: 길혜영
+    bio: 이것저것 신기한건 다 해보고 싶은
+    email: gilhyeyeong@mz.ci.kr
+    github_username: HYGill
+    
 # Defaults
 defaults:
 
