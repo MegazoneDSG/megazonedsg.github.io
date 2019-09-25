@@ -85,5 +85,7 @@ UIWebview와 거의 동일하지만 UIKit 프레임워크에 속해 있는 UIWeb
 ```
 
 실무에서 중요한 객체로는 원하는대로 커스터마이징이 가능한 WKWebview입니다.
+
 웹의 JavaScript와 iOS 네이티브상에서 통신을 바탕으로 커스터마이징하는 상황이 많음으로서
+
 UIWebview는 Deprecate되었으며 속도나 기능성면으로도 WKWebview 권장합니다.
