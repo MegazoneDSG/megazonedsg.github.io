@@ -27,7 +27,7 @@ iOS Webview에서 구현가능한 URL 호출 처리방식 아래 4가지 방식�
 기존 앱에서 포커스가 벗어나 다른 앱으로 이동하는 결과를 도출
 
 ```swift
-	let url = URL(string: "https://megazonedsg.github.io/")
+    let url = URL(string: "https://megazonedsg.github.io/")
     UIApplication.shared.open(url!, options: [:])
 ```
 
