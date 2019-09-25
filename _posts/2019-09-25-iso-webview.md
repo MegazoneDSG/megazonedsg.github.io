@@ -13,8 +13,8 @@ tags:
 - swift
 - App
 - Mobile
-introduction: [iOS] Webview에서 구현 가능한 URL 호출 처리방식
-twitter_text: [iOS] Webview에서 구현 가능한 URL 호출 처리방식
+introduction: "[iOS] Webview에서 구현 가능한 URL 호출 처리방식"
+twitter_text: "[iOS] Webview에서 구현 가능한 URL 호출 처리방식"
 ---
 
 
