@@ -3,7 +3,7 @@ layout: post
 author: youngjucha
 notification: false
 title: "[iOS] Webview에서 구현 가능한 URL 호출 처리방식"
-description: [iOS] Webview에서 구현 가능한 URL 호출 처리방식
+description: "[iOS] Webview에서 구현 가능한 URL 호출 처리방식"
 image: "http://d1841mjet2hm8m.cloudfront.net/thumb-900/fb_1135/1620/4/7363c8f36313431d34743b122393a5ae.jpg"
 categories:
 - programming
