@@ -63,13 +63,29 @@ twitter_text: Kafka 운영 환경 만들어보면서 쓰는 글
 
 컨테이너 구동 설정에 awk 와 aws 메타데이터 api 를 마구 써주어야 하기 때문에 많이 피곤할 수 있습니다.  에코 시스템과 모니터링도 별도로 서치해서 이런 과정을 거쳐야 합니다. 시간이 없으신 분들은 패스하도록 합시다. 
 
+## AWS MSK 
+  
+- 난이도 ★★★☆☆
+- 유지비 ★★★★★
+- 안정성 ★★★★★
+
+AWS MSK 는 AWS 에서 출시한 매니지드 카프카 클러스터 서비스입니다.  Zookeeper 비용을 받지 않고, 브로커 노드 운영 관리를 대신 해 줍니다.  가격은 브로커 인스턴스 사용량만 받습니다. 그런데 뭐랄까 너무 AWS 스럽다고 해야하나...
+
+- Kafka-manager 등을 써오던 사람들 입장에서는 관리 UI 가 하나도 없어 당황스러움
+- Configuration 을 수정하기 위해 aws-cli 를 써야하는데, AWS 만의 Configuration 버져닝 체계를 또 배우느라 급격히 피곤함.
+- 에코 시스템 하나도 없음
+
+무엇보다 비쌉니다...  서울 기준으로 최소 클러스터 사양으로 실행시 EC2 비용에 스토리지 비용까지 월 90 만원 정도입니다.  거기다, 실 운영을 위한 **Topic** 레벨 모니터링 클라우드 왓치 비용, 필수 에코 시스템 별도 설치 비용 등등 100 만원을 넘어가네요. 
+
+좀 더 저렴한 걸 찾아봅시다.ㅇ
+
 ## Confluent Platform Community (on AWS EC2)
  
 - 난이도 ★★☆☆☆
 - 유지비 ★★★☆☆
 - 안정성 ★★★★☆
 
-[https://www.confluent.io/](https://www.confluent.io/)  요즘에 Kafka 관련 에코시스템을 많이 출시하고 있는 아주 핫한 회사죠.  KSQL, Kafka Connect 등 마이크로 서비스 세계에서 고민했던 많은 부분들을 해결해 주고 있습니다.  엔터프라이즈, 커뮤니티 버젼이 있는데 이 글을 보시는 분들은 저렴한 걸 원함으로 커뮤니티 버젼으로 진행하겠습니다.
+[https://www.confluent.io/](https://www.confluent.io/)  요즘에 Kafka 관련 에코시스템을 많이 출시하고 있는 아주 핫한 회사죠.  KSQL, Schema-Registry  등 마이크로 서비스 세계에서 고민했던 많은 부분들을 해결해 주고 있습니다.  엔터프라이즈, 커뮤니티 버젼이 있는데 이 글을 보시는 분들은 저렴한 걸 원함으로 커뮤니티 버젼으로 진행하겠습니다.
 
 일단, [System Requirement](https://docs.confluent.io/current/installation/system-requirements.html) 를 보시면 다음과 같은 어마어마한 스펙이 필요하다고 겁을 줍니다. 클라우드 비용으로 월 수천만원이 들어가겠네요.
 
@@ -93,7 +109,7 @@ twitter_text: Kafka 운영 환경 만들어보면서 쓰는 글
 - m5.large (2core / 8GiB)  * 3대.
 - 100GB EBS 스토리지 * 3개.
 
-데이터 레플리카 위해 3대의 브로커 기준으로, 월 비용 40 만원 가량 소요됩니다.
+데이터 레플리카 위해 3대의 브로커 기준으로, 월 비용 40 만원 가량 소요됩니다. 미션 크리티컬 하지 않는 시스템, 싱글 브로커 운영으로 충분한 환경일 경우 월 13 만원 가량 소요됩니다.
  
 ## Install  
   
@@ -190,7 +206,7 @@ $ git checkout 5.3.1-post
 
 ### Edit docker-compose file
 
-**cp-all-in-one** 폴더로 이동하여, **docker-compose.yml** 파일을 수정합니다. 해당 파일에 많은 에코시스템이 있는데,  엔터프라이즈 라이선스를 사고 써야 하는 것은 삭제하고 사용해야 합니다. **ksql, kafka-connect** 까지는 사용 가능합니다. 해당 이미지를 참조하도록 합니다.
+**cp-all-in-one** 폴더로 이동하여, **docker-compose.yml** 파일을 수정합니다. 해당 파일에 많은 에코시스템 설정들이 있는데,  엔터프라이즈 라이선스를 구매해야 쓸 수 있는 것은 삭제하고 사용해야 합니다. **ksql, schema-registry,rest-proxy** 까지는 사용 가능합니다. 해당 이미지를 참조하도록 합니다.
 
 ![](https://user-images.githubusercontent.com/13447690/65837944-36e28780-e338-11e9-9a7c-88be349e5a38.png) 
 
