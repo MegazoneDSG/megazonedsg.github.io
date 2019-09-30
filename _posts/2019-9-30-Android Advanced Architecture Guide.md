@@ -46,11 +46,11 @@ Graph of MVI Architecture
 What are the recommended Architecture Components?
 아키텍처 구성 요소에 대한 간단한 소개와 함께 작동하는 방법을 소개합니다. 구성 요소의 하위 집합, 즉 LiveData, ViewModel 및 Room에 중점을 둡니다.
 
-![Android MVI-Light Call Pattern](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/App Architecture.png)
+![Android MVI-Light Call Pattern](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/App%20Architecture.png)
 
 Android MVI-Light Call Pattern
 
-![Android Architecture Component](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/Architecture Component.png)
+![Android Architecture Component](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/Architecture %20Component.png)
 
 Android Architecture Component
 
