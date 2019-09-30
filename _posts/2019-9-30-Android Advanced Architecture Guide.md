@@ -17,7 +17,9 @@ twitter_text: Androd Advanced Architecture Guide
 
 ## Architecture 원칙
 
+
 ### 관심사 분리
+
 따라야 할 가장 중요한 원칙은 관심사 분리입니다. Activity 또는 Fragment 에 모든 코드를 작성하는 실수는 흔히 일어납니다. 이러한 UI 기반의 클래스는 UI 및 운영체제 상호작용을 처리하는 로직만 포함해야 합니다. 이러한 클래스를 최대한 가볍게 유지하여 많은 수명 주기 관련 문제를 피할 수 있습니다.
 Activity 및 Fragment 구현은 소유의 대상이 아니며, Android OS와 앱 사이의 계약을 나타내도록 이어주는 클래스에 불과합니다. 사용자 상호작용을 기반으로 또는 메모리 부족과 같은 시스템 조건으로 인해 언제든지 OS에서 클래스를 제거할 수 있습니다. 만족스러운 사용자 환경과 더욱더 수월한 앱 관리 환경을 제공하려면 이러한 클래스에 대한 의존성을 최소화하는 것이 좋습니다.
 Why the cleaner approach?
@@ -25,6 +27,7 @@ Why the cleaner approach?
  * High level of abstraction
  * Loose coupling between the code
  * Testing of code is painless
+ 
  
  ### 모델에서 UI 만들기
  
