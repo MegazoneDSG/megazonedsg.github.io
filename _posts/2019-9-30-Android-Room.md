@@ -63,7 +63,7 @@ data class User(
  - 각 엔티티는 하나 이상의 기본 키를 정의해야합니다. PrimaryKey 주석으로 필드에 주석 을 달아야 합니다.
  - 기본적으로 Room은 클래스 이름을 테이블 이름으로 사용합니다. tableName 속성 을 사용하여 사용자 지정 이름을 지정할 수 있습니다 .
  
-자세한 내용은 여기 를 확인하십시오 .
+자세한 내용은 [여기](https://developer.android.com/training/data-storage/room/defining-data.html) 를 확인하십시오 .
  
 이제 데이터베이스 액세스에 사용될 DAO (Data Access Object)가 필요합니다.
  
@@ -98,7 +98,7 @@ DAO를 사용하면 쿼리에 매개 변수를 전달하거나 열의 하위 집
  - DAO는 인터페이스 또는 추상 클래스 일 수 있습니다. 추상 클래스의 경우 선택적으로 RoomDatabase를 유일한 매개 변수로 사용하는 생성자를 가질 수 있습니다.
  - Room은 컴파일 타임에 각 DAO 구현을 만듭니다.
  
-자세한 내용은 여기 를 확인 하십시오 .
+자세한 내용은 [여기](https://developer.android.com/training/data-storage/room/accessing-data.html) 를 확인 하십시오 .
  
 마지막으로 Database로 주석이 달린 DatabaseClass가 필요합니다. 
 Database 클래스는 DAO 인터페이스간에 논리적 그룹을 설정합니다. 또한 데이터베이스 마이그레이션을 추적하고 구현하는 데 사용되는 필수 버전 번호를 정의합니다.
