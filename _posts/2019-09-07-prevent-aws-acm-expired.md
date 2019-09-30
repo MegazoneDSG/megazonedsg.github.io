@@ -43,7 +43,7 @@ AWS ACM 에서 발급하는 인증서를 사용 중이었는데, 알아보기로
 
 ### 적용할 도메인 이름들을 추가한다.
 
-<img width="1560" alt="스크린샷 2019-09-07 오후 12 14 31" src="https://user-images.githubusercontent.com/13447690/64469268-dcf00700-d169-11e9-855e-bda4b27031a0.png">
+<img width="1560" alt="스크린샷 2019-09-07 오후 12 14 31" src="https://user-images.githubusercontent.com/13447690/65855234-a63c9380-e399-11e9-9588-423fb54a811b.png">
 
 ### `DNS 검증` 을 선택하고, 발급받는다.
 
@@ -55,7 +55,7 @@ AWS ACM 에서 발급하는 인증서를 사용 중이었는데, 알아보기로
 - A 레코드 도메인: _9cb1e06cc8e1520fe8429dcf83f76d0a.atomy.com.
 - A 레코드 값: _e13286843784e905010f8f9d0d534d36.duyqrilejt.acm-validations.aws.
 
-<img width="1535" alt="스크린샷 2019-09-07 오후 12 16 31" src="https://user-images.githubusercontent.com/13447690/64469270-dd889d80-d169-11e9-8e49-e0e38967908a.png">
+<img width="1535" alt="스크린샷 2019-09-07 오후 12 16 31" src="https://user-images.githubusercontent.com/13447690/65855244-ab99de00-e399-11e9-8704-9797c91402df.png">
 
 ### GABIA 도메인 사이트에 접속하여, 네임플러스 부가서비스로 들어간다.
 
