@@ -4,7 +4,7 @@ author: Lukoh
 notification: true
 title: "1# Androd Room 기술"
 description: Android Room 이란?
-image: "https://user-images.githubusercontent.com/13447690/65836936-bb7bd880-e32d-11e9-8e41-073bc346abea.png"
+image: ""
 categories:
 - tutorial
 date: 2019-09-30 02:05:00
