@@ -28,7 +28,6 @@ Why the cleaner approach?
  * Loose coupling between the code
  * Testing of code is painless
  
- 
 ### 모델에서 UI 만들기
  
 또 하나의 중요한 원칙은 모델에서 UI를 만들어야 한다는 것입니다. 가급적 지속적인 모델을 권장합니다. 모델은 앱의 데이터 처리를 담당하는 구성요소로, 앱의 View 개체 및 앱 구성요소와 독립되어 있으므로 앱의 수명주기와 관련 문제의 영향을 받지 않습니다.
