@@ -35,22 +35,22 @@ Why the cleaner approach?
 
 ### Recommended App Architecture
 
-그림1)
+![Original MVI Design Pattern](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/mvi-func2.png)
 
 Original MVI Design Pattern
 
-그림2)
+![Graph of MVI Architecture](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/mvi1.png)
 
 Graph of MVI Architecture
 
 What are the recommended Architecture Components?
 아키텍처 구성 요소에 대한 간단한 소개와 함께 작동하는 방법을 소개합니다. 구성 요소의 하위 집합, 즉 LiveData, ViewModel 및 Room에 중점을 둡니다.
 
-그림3)
+![Android MVI-Light Call Pattern](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/App Architecture.png)
 
 Android MVI-Light Call Pattern
 
-그림4)
+![Android Architecture Component](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/Architecture Component.png)
 
 Android Architecture Component
 
