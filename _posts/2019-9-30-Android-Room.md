@@ -100,6 +100,7 @@ abstract class AppDatabase : RoomDatabase() {
 }
  
 After creating the files above, you get an instance of the created database using the following code:
+
 val db = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java, "database-name"
