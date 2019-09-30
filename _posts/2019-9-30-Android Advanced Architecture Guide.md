@@ -115,9 +115,7 @@ class UserProfileViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
           throw IllegalArgumentException("missing user id")
    val user : User = TODO()
 }
-'''
 
-'''
 // UserProfileFragment
 private val viewModel: UserProfileViewModel by viewModels(
     factoryProducer = { SavedStateVMFactory(this) }
@@ -333,6 +331,7 @@ abstract class UserDatabase : RoomDatabase() {
    abstract fun userDao(): UserDao
 }
 ```
+
 이제 UserRepository를 수정하여 Room 데이터 소스를 통합할 수 있습니다.
 
 ```
