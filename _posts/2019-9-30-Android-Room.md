@@ -27,13 +27,16 @@ Room을 사용해야하는 이유?
 
 Room은 이러한 문제를 처리하므로 SQLite 대신 Room을 사용 하는 것이 좋습니다 .
 Room에는 3 가지 주요 구성 요소가 있습니다.
-*[DataBase](https://developer.android.com/reference/androidx/room/Database.html) : 데이터베이스 홀더를 포함하고 앱의 지속 관계형 데이터에 대한 기본 연결을위한 기본 액세스 지점 역할을합니다.
+* [DataBase](https://developer.android.com/reference/androidx/room/Database.html) : 데이터베이스 홀더를 포함하고 앱의 지속 관계형 데이터에 대한 기본 연결을위한 기본 액세스 지점 역할을합니다.
 주석이 달린 클래스 @Database는 다음 조건을 충족해야합니다.
 확장하는 추상 클래스입니다 RoomDatabase.
 주석 내에 데이터베이스와 연관된 엔티티 목록을 포함하십시오.
 인수가 0 인 추상 메소드를 포함하고 주석이 달린 클래스를 리턴합니다 @Dao.
-*[Entity](https://developer.android.com/training/data-storage/room/defining-data.html) : 데이터베이스 내의 테이블을 나타냅니다.
-*[DAO](https://developer.android.com/training/data-storage/room/accessing-data.html) : 데이터베이스에 액세스하는 데 사용되는 방법이 들어 있습니다.
+
+* [Entity](https://developer.android.com/training/data-storage/room/defining-data.html) : 데이터베이스 내의 테이블을 나타냅니다.
+
+* [DAO](https://developer.android.com/training/data-storage/room/accessing-data.html) : 데이터베이스에 액세스하는 데 사용되는 방법이 들어 있습니다.
+
 앱은 Room 데이터베이스를 사용하여 해당 데이터베이스와 연결된 데이터 액세스 개체 또는 DAO를 가져옵니다. 그런 다음 앱은 각 DAO를 사용하여 데이터베이스에서 엔터티를 가져오고 해당 엔터티에 대한 변경 내용을 데이터베이스에 다시 저장합니다. 마지막으로 앱은 엔터티를 사용하여 데이터베이스 내의 테이블 열에 해당하는 값을 가져오고 설정합니다.
 
 Room의 여러 구성 요소 사이의 관계는 그림 1에 나타납니다.
