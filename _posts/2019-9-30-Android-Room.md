@@ -46,13 +46,15 @@ Room의 여러 구성 요소 사이의 관계는 그림 1에 나타납니다.
 
 User 데이터 클래스
 
+```
 @Entity
 data class User(
     @PrimaryKey val uid: Int,
     @ColumnInfo(name = "first_name") val firstName: String?,
     @ColumnInfo(name = "last_name") val lastName: String?
 )
- 
+```
+
 몇 가지주의 할 점
  - 클래스는 Entity 로 주석을 달아야합니다 . 이것이 Room을 식별하는 방법입니다. 생성 한 각 엔티티에 대해 연관된 데이터베이스를 사용하여 테이블이 작성됩니다. 기본적으로 Room은 각 필드에 대한 열을 생성하지만 주석 무시를 사용하여 몇 개의 필드에서이를 피할 수 있습니다.
  - 각 엔티티는 하나 이상의 기본 키를 정의해야합니다. PrimaryKey 주석으로 필드에 주석 을 달아야 합니다.
@@ -63,9 +65,10 @@ data class User(
 이제 데이터베이스 액세스에 사용될 DAO (Data Access Object)가 필요합니다.
  
 User DAO 인터페이스
-
-@Dao
+```
+ @Dao
 interface UserDao {
+
     @Query("SELECT * FROM user")
     fun getAll(): List<User>
  
@@ -82,6 +85,7 @@ interface UserDao {
     @Delete
     fun delete(user: User)
 }
+```
  
 DAO를 사용하면 쿼리에 매개 변수를 전달하거나 열의 하위 집합을 반환하거나 인수 컬렉션을 전달하는 등의 작업을 훨씬 더 많이 수행 할 수 있습니다.
 몇 가지주의 할 점
@@ -98,6 +102,7 @@ Database 클래스는 DAO 인터페이스간에 논리적 그룹을 설정합니
  
 AppDatabase 클래스
 
+```
 @Database(entities = arrayOf(User::class), version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
@@ -109,8 +114,7 @@ val db = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java, "database-name"
         ).build()
- 
- 
+``` 
  
 여기서 주목할 사항
  - 각 RoomDatabase 인스턴스가 상당히 비싸고 여러 인스턴스에 액세스 할 필요가 거의 없으므로 AppDatabase 객체를 인스턴스화 할 때 싱글 톤 디자인 패턴을 따라야합니다.
