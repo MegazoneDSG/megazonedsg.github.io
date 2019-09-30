@@ -66,7 +66,7 @@ data class User(
  
 User DAO 인터페이스
 ```
- @Dao
+@Dao
 interface UserDao {
 
     @Query("SELECT * FROM user")
