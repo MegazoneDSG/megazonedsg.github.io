@@ -43,7 +43,7 @@ Room에는 3 가지 주요 구성 요소가 있습니다.
 Room의 여러 구성 요소 사이의 관계는 그림 1에 나타납니다.
 
 그림 1. Room 아키텍처 다이어그램
-
+![Room Architecture Diagram](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/room_architecture.png)
 
 
 다음 코드 스니펫에는 하나의 엔티티와 하나의 DAO가있는 샘플 데이터베이스 구성이 포함되어 있습니다.
