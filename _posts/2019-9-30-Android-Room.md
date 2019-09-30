@@ -41,10 +41,9 @@ Room에는 3 가지 주요 구성 요소가 있습니다.
 앱은 Room 데이터베이스를 사용하여 해당 데이터베이스와 연결된 데이터 액세스 개체 또는 DAO를 가져옵니다. 그런 다음 앱은 각 DAO를 사용하여 데이터베이스에서 엔터티를 가져오고 해당 엔터티에 대한 변경 내용을 데이터베이스에 다시 저장합니다. 마지막으로 앱은 엔터티를 사용하여 데이터베이스 내의 테이블 열에 해당하는 값을 가져오고 설정합니다.
 
 Room의 여러 구성 요소 사이의 관계는 그림 1에 나타납니다.
-
-그림 1. Room 아키텍처 다이어그램
 ![Room Architecture Diagram](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/room_architecture.png)
 
+그림 1. Room 아키텍처 다이어그램
 
 다음 코드 스니펫에는 하나의 엔티티와 하나의 DAO가있는 샘플 데이터베이스 구성이 포함되어 있습니다.
 
