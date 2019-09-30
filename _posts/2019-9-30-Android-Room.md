@@ -43,7 +43,9 @@ Room의 여러 구성 요소 사이의 관계는 그림 1에 나타납니다.
 
 
 다음 코드 스니펫에는 하나의 엔티티와 하나의 DAO가있는 샘플 데이터베이스 구성이 포함되어 있습니다.
+
 User 데이터 클래스
+
 @Entity
 data class User(
     @PrimaryKey val uid: Int,
@@ -61,6 +63,7 @@ data class User(
 이제 데이터베이스 액세스에 사용될 DAO (Data Access Object)가 필요합니다.
  
 User DAO 인터페이스
+
 @Dao
 interface UserDao {
     @Query("SELECT * FROM user")
@@ -94,6 +97,7 @@ DAO를 사용하면 쿼리에 매개 변수를 전달하거나 열의 하위 집
 Database 클래스는 DAO 인터페이스간에 논리적 그룹을 설정합니다. 또한 데이터베이스 마이그레이션을 추적하고 구현하는 데 사용되는 필수 버전 번호를 정의합니다.
  
 AppDatabase 클래스
+
 @Database(entities = arrayOf(User::class), version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
