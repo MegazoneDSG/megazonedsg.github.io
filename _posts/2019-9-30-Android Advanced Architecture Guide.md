@@ -50,7 +50,7 @@ What are the recommended Architecture Components?
 
 Android MVI-Light Call Pattern
 
-![Android Architecture Component](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/Architecture %20Component.png)
+![Android Architecture Component](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/Architecture%20Component.png)
 
 Android Architecture Component
 
