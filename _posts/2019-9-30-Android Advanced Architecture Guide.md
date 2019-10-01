@@ -40,22 +40,22 @@ Why the cleaner approach?
 
 ![Original MVI Design Pattern](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/mvi-func2.png)
 
-Original MVI Design Pattern
+그림 1) Original MVI Design Pattern
 
 ![Graph of MVI Architecture](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/mvi1.png)
 
-Graph of MVI Architecture
+그림 2) Graph of MVI Architecture
 
 What are the recommended Architecture Components?
 아키텍처 구성 요소에 대한 간단한 소개와 함께 작동하는 방법을 소개합니다. 구성 요소의 하위 집합, 즉 LiveData, ViewModel 및 Room에 중점을 둡니다.
 
 ![Android MVI-Light Call Pattern](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/App%20Architecture.png)
 
-Android MVI-Light Call Pattern
+그림 3) Android MVI-Light Call Pattern
 
 ![Android Architecture Component](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/Architecture%20Component.png)
 
-Android Architecture Component
+그림 4) Android Architecture Component
 
 * Entity: When working with Architecture Components, this is an annotated class that describes a database table.
 SQLite database: On the device, data is stored in an SQLite database. For simplicity, additional storage options, such as a web server, are omitted. The Room persistence library creates and maintains this database for you.
