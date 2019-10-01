@@ -2,7 +2,7 @@
 layout: post
 author: Lukoh
 notification: true
-title: "1# Androd Room 기술"
+title: "Androd Room 기술"
 description: Android Room 이란?
 image: ""
 categories:
