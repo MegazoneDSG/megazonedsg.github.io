@@ -20,7 +20,7 @@ twitter_text: Androd ViewModel & LiveData"
 
 ### 책임 배분
 
-![책임배분]()
+![책임배분](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch1.png)
 그림 1) 아키텍처 컴포넌트로 빌드 된 앱에서 엔티티의 일반적인 상호 작용
 
 이상적으로 ViewModels는 Android에 대해 아무것도 몰라야 합니다. 이는 테스트 가능성, leak safety 및 모듈성을 향상시킵니다. 일반적인 경험 규칙은 ViewModels안에  import android.*  가 없는지 확인하는 것입니다 (예 : AAC(Android Architecture Component) 예외 ). 
@@ -32,7 +32,7 @@ twitter_text: Androd ViewModel & LiveData"
 Activities 활동 및 조각의 논리를 최소로 유지
 ViewModel 은 활동 또는 프래그먼트와 범위가 다릅니다. ViewModel이 활성 상태이며 실행중인 동안 활동은 라이프 사이클 상태 중 하나 일 수 있습니다 . ViewModel을 모르는 동안 활동 및 프래그먼트를 파괴하고 다시 생성 할 수 있습니다.
 
-![ViewModels에서 참조]()
+![ViewModels에서 참조](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch2.png)
 그림 2) ViewModels에서 참조
 
 ViewModel은 구성 변경 사항을 유지합니다
@@ -44,8 +44,8 @@ ViewModel과 Views 사이의 통신에 권장되는 방법은 LiveData 또는 �
 
 ### Observer Pattern
 
-![]()
-그림 3) 옵저버 패턴
+![관찰자 패턴](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch3.png)
+그림 3) 관찰자 패턴
 
 Android에서 프레젠테이션 레이어를 디자인하는 가장 편리한 방법은 View (활동 또는 조각 )가 ViewModel 을 관찰 ( 변경 사항 구독 )하도록하는 것입니다. ViewModel은 Android에 대해 알지 못하므로 Android가 Views를 자주 죽이는 방법을 모릅니다. 여기에는 몇 가지 장점이 있습니다.
 
@@ -79,7 +79,7 @@ repository 데이터 저장소를 단일 지점 항목으로 데이터에 추가
 시나리오를 고려하십시오. 표시 할 항목 목록이 포함 된 ViewModel에 노출 된 LiveData를 관찰하고 있습니다. View는 로드되는 데이터, 네트워크 오류 및 비어있는 목록을 어떻게 구분할 수 있습니까?
 * LiveData<MyDataState>ViewModel에서을 노출시킬 수 있습니다. 예를 들래어, MyDataState 데이터가 현재로드 중인지, 성공적으로로드되었는지 또는 실패했는지   에 대한 정보를 포함 할 수 있습니다.
   
-![Observe]() 
+![Observe](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch4.png) 
 
 상태 및 오류 메시지와 같은 다른 메타 데이터가있는 클래스에서 데이터를 랩핑 할 수 있습니다. 샘플에서 [Resource 클래스](https://developer.android.com/topic/libraries/architecture/guide.html#addendum)를 참조하십시오 .
 하나의 Wrapper 또는 다른 LiveData를 사용하여 데이터 상태에 대한 정보를 노출하십시오.
@@ -110,24 +110,24 @@ state 의 부분으로 evnet를 디자인하십시오. 자세한 내용은 [Snac
 반응 패러다임은 UI와 앱의 나머지 레이어 사이를 편리하게 연결할 수 있기 때문에 Android에서 잘 작동합니다. LiveData는 이 구조의 핵심 구성 요소이므로 일반적으로 액티비티들 및 프레크먼트들은 LiveData 인스턴스를 관찰합니다.
 ViewModel이 다른 구성 요소와 통신하는 방법은 개발자에게 달려 있지만 Leaks & Edge 사례를 주의하십시오. 프리젠 테이션 레이어가 관찰자 패턴을 사용하고 데이터 레이어가 콜백을 사용하는이 다이어그램을 고려하십시오.
 
-![UI의 관찰자 패턴 및 데이터 계층의 콜백]()
+![UI의 관찰자 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch5.png)
 그림 4) UI의 관찰자 패턴 및 데이터 계층의 콜백
 
 사용자가 앱을 종료하면 ViewModel이 더 이상 표시되지 않으므로 View가 사라집니다. 리포지토리가 싱글 톤이거나 응용 프로그램으로 범위가 지정된 경우 프로세스가 종료 될 때까지 리포지토리가 삭제되지 않습니다 . 시스템에 리소스가 필요하거나 사용자가 앱을 수동으로 종료 한 경우에만 발생합니다. 리포지토리가 ViewModel에서 콜백에 대한 참조를 보유하고 있으면 ViewModel이 일시적으로 누수됩니다.
 
-![UI의 관찰자 패턴 및 데이터 계층의 콜백]()
+![UI의 관찰자 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch6.png)
 그림 5) UI의 관찰자 패턴 및 데이터 계층의 콜백
 
 활동이 완료되었지만 ViewModel이 여전히 있습니다.
 
 ViewModel이 가볍거나 작업이 빠르게 완료되는 경우이 누출은 큰 문제가되지 않습니다. 그러나 항상 그런 것은 아닙니다. 이상적으로, ViewModel은 관찰하는 뷰가 없을 때마다 자유롭게 이동할 수 있어야합니다.
 
-![UI의 관찰자 패턴 및 데이터 계층의 콜백]()
+![UI의 관찰자 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch7.png)
 그림 6) UI의 관찰자 패턴 및 데이터 계층의 콜백
 
 이를 달성하기위한 많은 옵션이 있습니다.
 
-* ViewModel.onCleared () 를 사용 하면 리포지토리에 콜백을 ViewModel에 드롭하도록 지시 할 수 있습니다. 
+* ViewModel.onCleared() 를 사용 하면 리포지토리에 콜백을 ViewModel에 드롭하도록 지시 할 수 있습니다. 
   (현재 버젼의 ViewModel 에서는 View 가 Inactive 상태가 되면 자동으로 OnCleared() 함수가 호출되어 Clear 됩니다.  )
 * 저장소에서 WeakReference 를 사용하거나 이벤트 버스를 사용할 수 있습니다 (오용하기 쉽고 유해한 것으로 간주 됨).
 * View와 ViewModel간에 LiveData를 사용하는 것과 유사한 방식으로 LiveData를 사용하여 Repository와 ViewModel간에 통신하십시오.
@@ -142,12 +142,12 @@ ViewModel에서 모든 호출은 마지막 호출이 될 수 있습니다.
 
 ViewModels 의 Leak 및 콜백 지옥 을 피하기 위해 다음과 같이 리포지토리를 볼 수 있습니다.
 
-![래포지터리 패턴 및 데이터 계층의 콜백]()
+![래포지터리 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch8.png)
 그림 7) 래포지터리 패턴 및 데이터 계층의 콜백
 
 ViewModel이 지워지거나 View의 라이프 사이클이 완료되면 구독이 지워집니다.
 
-![래포지터리 패턴 및 데이터 계층의 콜백]()
+![래포지터리 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch9.png)
 그림 8) 래포지터리 패턴 및 데이터 계층의 콜백
 
 이 접근 방식을 시도해 볼 수 있습니다. LifecycleOwner에 액세스 할 수없는 경우 ViewModel에서 리포지토리를 어떻게 구독합니까? 변환을 사용하면 이를 매우 편리하게 해결할 수 있습니다. Transformations.switchMap다른 LiveData 인스턴스의 변경에 반응하는 새 LiveData를 만들 수 있습니다. 또한 체인 전체에서 옵저버 수명주기 정보를 전달할 수 있습니다.
