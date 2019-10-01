@@ -21,6 +21,7 @@ twitter_text: Androd ViewModel & LiveData"
 ### 책임 배분
 
 ![책임배분](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch1.png)
+
 그림 1) 아키텍처 컴포넌트로 빌드 된 앱에서 엔티티의 일반적인 상호 작용
 
 이상적으로 ViewModels는 Android에 대해 아무것도 몰라야 합니다. 이는 테스트 가능성, leak safety 및 모듈성을 향상시킵니다. 일반적인 경험 규칙은 ViewModels안에  import android.*  가 없는지 확인하는 것입니다 (예 : AAC(Android Architecture Component) 예외 ). 
@@ -33,6 +34,7 @@ Activities 활동 및 조각의 논리를 최소로 유지
 ViewModel 은 활동 또는 프래그먼트와 범위가 다릅니다. ViewModel이 활성 상태이며 실행중인 동안 활동은 라이프 사이클 상태 중 하나 일 수 있습니다 . ViewModel을 모르는 동안 활동 및 프래그먼트를 파괴하고 다시 생성 할 수 있습니다.
 
 ![ViewModels에서 참조](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch2.png)
+
 그림 2) ViewModels에서 참조
 
 ViewModel은 구성 변경 사항을 유지합니다
@@ -45,6 +47,7 @@ ViewModel과 Views 사이의 통신에 권장되는 방법은 LiveData 또는 �
 ### Observer Pattern
 
 ![관찰자 패턴](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch3.png)
+
 그림 3) 관찰자 패턴
 
 Android에서 프레젠테이션 레이어를 디자인하는 가장 편리한 방법은 View (활동 또는 조각 )가 ViewModel 을 관찰 ( 변경 사항 구독 )하도록하는 것입니다. ViewModel은 Android에 대해 알지 못하므로 Android가 Views를 자주 죽이는 방법을 모릅니다. 여기에는 몇 가지 장점이 있습니다.
@@ -95,9 +98,9 @@ UI 상태를 효율적으로 저장하고 복원하려면 지속성 onSaveInstan
 
 이벤트는 한 번 발생하는 것입니다. ViewModel은 데이터를 노출하지만 이벤트는 어떻습니까? 예를 들어, 탐색 이벤트 또는 스낵바 메시지 표시는 한 번만 실행해야하는 조치입니다.
 이벤트 개념은 LiveData가 데이터를 저장하고 복원하는 방법과 완벽하게 맞지 않습니다. 다음 필드가있는 ViewModel을 고려하십시오.
-
+```
 var snackbarMessage = MutableLiveData <String> ()
-  
+```  
 액티비티가 이를 관찰하기 시작하고 ViewModel이 작업을 완료하므로 메시지를 업데이트를 해야 합니다.
 snackbarMessage.value =  "항목이 저장되었습니다!"
 액티비티가 값을 받고 스낵바를 표시합니다. 
@@ -111,11 +114,13 @@ state 의 부분으로 evnet를 디자인하십시오. 자세한 내용은 [Snac
 ViewModel이 다른 구성 요소와 통신하는 방법은 개발자에게 달려 있지만 Leaks & Edge 사례를 주의하십시오. 프리젠 테이션 레이어가 관찰자 패턴을 사용하고 데이터 레이어가 콜백을 사용하는이 다이어그램을 고려하십시오.
 
 ![UI의 관찰자 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch5.png)
+
 그림 4) UI의 관찰자 패턴 및 데이터 계층의 콜백
 
 사용자가 앱을 종료하면 ViewModel이 더 이상 표시되지 않으므로 View가 사라집니다. 리포지토리가 싱글 톤이거나 응용 프로그램으로 범위가 지정된 경우 프로세스가 종료 될 때까지 리포지토리가 삭제되지 않습니다 . 시스템에 리소스가 필요하거나 사용자가 앱을 수동으로 종료 한 경우에만 발생합니다. 리포지토리가 ViewModel에서 콜백에 대한 참조를 보유하고 있으면 ViewModel이 일시적으로 누수됩니다.
 
 ![UI의 관찰자 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch6.png)
+
 그림 5) UI의 관찰자 패턴 및 데이터 계층의 콜백
 
 활동이 완료되었지만 ViewModel이 여전히 있습니다.
@@ -143,15 +148,17 @@ ViewModel에서 모든 호출은 마지막 호출이 될 수 있습니다.
 ViewModels 의 Leak 및 콜백 지옥 을 피하기 위해 다음과 같이 리포지토리를 볼 수 있습니다.
 
 ![래포지터리 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch8.png)
+
 그림 7) 래포지터리 패턴 및 데이터 계층의 콜백
 
 ViewModel이 지워지거나 View의 라이프 사이클이 완료되면 구독이 지워집니다.
 
 ![래포지터리 패턴 및 데이터 계층의 콜백](https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch9.png)
+
 그림 8) 래포지터리 패턴 및 데이터 계층의 콜백
 
 이 접근 방식을 시도해 볼 수 있습니다. LifecycleOwner에 액세스 할 수없는 경우 ViewModel에서 리포지토리를 어떻게 구독합니까? 변환을 사용하면 이를 매우 편리하게 해결할 수 있습니다. Transformations.switchMap다른 LiveData 인스턴스의 변경에 반응하는 새 LiveData를 만들 수 있습니다. 또한 체인 전체에서 옵저버 수명주기 정보를 전달할 수 있습니다.
-
+```
 LiveData<Repo> repo = Transformations.switchMap(repoIdLiveData, repoId -> {
     if (repoId.isEmpty()) {
        return AbsentLiveData.create();
@@ -159,6 +166,7 @@ LiveData<Repo> repo = Transformations.switchMap(repoIdLiveData, repoId -> {
 
     return repository.loadRepo(repoId);
 });
+```
 
 이 예제에서 트리거가 업데이트를 받으면 함수가 적용되고 결과가 다운 스트림으로 전달됩니다. 활동이 관찰 repo되고 동일한 LifecycleOwner가 repository.loadRepo(id)호출에 사용됩니다 .
 
@@ -169,10 +177,13 @@ LiveData<Repo> repo = Transformations.switchMap(repoIdLiveData, repoId -> {
 LiveData의 가장 일반적인 사용 사례는 ViewModels에서 MutableLiveData를 사용하고 이를 관찰자로부터 변경할 수 없도록 LiveData로 노출하는 것입니다.
 더 많은 기능이 필요한 경우 LiveData를 확장하면 활성 옵저버가있을 때 알려줍니다. 예를 들어 위치 또는 센서 서비스를 듣고 자 할 때 유용합니다.
 
+```
 public class MyLiveData extends LiveData<MyData> {
+   
    public MyLiveData(Context context) {
        // Initialize service
    }
+   
    @Override
    protected void onActive() {
        // Start listening
@@ -183,6 +194,7 @@ public class MyLiveData extends LiveData<MyData> {
        // Stop listening
    }
 }
+```
 
 ### LiveData를 확장하지 않을 때
 
