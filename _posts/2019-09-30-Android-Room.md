@@ -2,14 +2,14 @@
 layout: post
 author: Lukoh
 notification: true
-title: "Androd Room 기술"
+title: "Android Room 기술"
 description: Android Room 이란?
-image: ""
+image: "https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/room_architecture.png"
 categories:
 - tutorial
 date: 2019-09-30 02:05:00
 tags:
-- Androidn Room
+- Android Room
 introduction: Android 개발 필수 기술 Room
 twitter_text: Android 개발 필수 기술 Room
 ---
