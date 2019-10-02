@@ -2,16 +2,16 @@
 layout: post
 author: Lukoh
 notification: true
-title: "Androd Advanced Architecture Guide"
-description: Androd Advanced Architecture Guide
-image: ""
+title: "Android Advanced Architecture Guide"
+description: Android Advanced Architecture Guide
+image: "https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/App%20Architecture.png"
 categories:
 - tutorial
 date: 2019-09-30 02:05:00
 tags:
 - Androidn Room
-introduction: Androd Advanced Architecture Guide
-twitter_text: Androd Advanced Architecture Guide
+introduction: Android Advanced Architecture Guide
+twitter_text: Android Advanced Architecture Guide
 ---
 # Android Advanced Architecture Guide
 
