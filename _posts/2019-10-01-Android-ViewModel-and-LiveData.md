@@ -63,7 +63,8 @@ data 데이터를 UI로 푸시하는 대신 UI에서 변경 사항을 관찰하�
 관심사를 분리 할 수있는 것은 좋은 생각입니다. 
 ViewModel에 너무 많은 코드가 있거나 너무 많은 책임이있는 경우 다음을 고려하십시오.
 * ViewModel과 동일한 범위를 사용하여 일부 Logic을 Repository 또는 Interactor 로 옮기십시오. 앱의 다른 부분과 통신하고 ViewModel에서 LiveData 홀더   를 업데이트합니다.
-* 도메인 계층 추가 및 [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) 채택 . 이는   테스트 및 유지 관리가 가능한 아키텍처로 이어집니다. 또한 main thread를 빠르게 내릴 수 있습니다. [Architecture Blueprints]               (https://github.com/googlesamples/android-architecture) 에 Clean Architecture 샘플이 있습니다.
+* 도메인 계층 추가 및 [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) 채택 . 이는   테스트 및 유지 관리가 가능한 아키텍처로 이어집니다. 또한 main thread를 빠르게 내릴 수 있습니다. 
+[Architecture Blueprints](https://github.com/googlesamples/android-architecture) 에 Clean Architecture 샘플이 있습니다.
 
 ✅ 책임을 분배하고 필요한 경우 도메인 계층을 추가하십시오.
 
