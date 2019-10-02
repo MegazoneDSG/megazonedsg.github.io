@@ -2,16 +2,16 @@
 layout: post
 author: Lukoh
 notification: true
-title: "Androd ViewModel & LiveData"
-description: Androd ViewModel & LiveData"
-image: ""
+title: "Android ViewModel & LiveData"
+description: Android ViewModel & LiveData"
+image: "https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch1.png"
 categories:
 - tutorial
 date: 2019-09-30 02:05:00
 tags:
-- Androd ViewModel & LiveData"
-introduction: Androd ViewModel & LiveData
-twitter_text: Androd ViewModel & LiveData"
+- Android ViewModel & LiveData"
+introduction: Android ViewModel & LiveData
+twitter_text: Android ViewModel & LiveData"
 ---
 
 # ViewModels & LiveData : 패턴 + 안티 패턴
