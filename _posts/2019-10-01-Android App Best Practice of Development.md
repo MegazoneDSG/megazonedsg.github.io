@@ -4,7 +4,7 @@ author: Lukoh
 notification: true
 title: "Android App Best practices of Development"
 description: Android App Best practices of Development
-image: ""
+image: "https://richestsoft.com/blog/wp-content/uploads/2019/02/Android-app-development.jpg"
 categories:
 - tutorial
 date: 2019-09-30 02:05:00
