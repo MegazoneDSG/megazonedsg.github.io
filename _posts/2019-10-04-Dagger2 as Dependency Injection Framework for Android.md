@@ -60,13 +60,13 @@ This annotation can be used in two ways:
 * Used by a component to tell dagger that it wants this dependency.
 
 Here is a simple example to make the statement clearer:
-'''
+```
 class Example @Inject constructor()
 class MainClass{
     @Inject
     lateinit var example: Example
 }
-'''
+```
 
 Here I create a class called Example which uses the @Inject on its constructor to tell dagger that it should use this constructor to inject dependencies of this type. 
 After that I define the MainClass which ask Dagger to get an instance of Example and dagger tries to inject the dependency using the constructor.
@@ -76,18 +76,18 @@ After that I define the MainClass which ask Dagger to get an instance of Example
 I use the provides annotation if there is no constructor I can inject from and when I can’t instantiate the dependency.
 Marking a method with this annotation tells dagger that the method returns the datatype I want to inject. 
 Now let’s look at an example to understand it better:
-'''
+```
 @Provides fun getContext(): Context {
     return this.getContext()
 }
-'''
+```
 
 In this example, I have a dummy function which returns a context. 
 The @Provides annotation tells dagger where it can find the context.
 
 The only problem that I can run into using this function is when I want to inject two different things with the same return-type. 
 If something like this happens I need to use the Named annotation to rename our dependency manually.
-'''
+```
 @Named("ActivityContext")
 @Provides fun getContext(): Context {
     return this.getContext()
@@ -97,7 +97,7 @@ If something like this happens I need to use the Named annotation to rename our 
 @Provides fun getApplicationContexts(): Context{
     return this.applicationContext
 }
-'''
+```
 
 Here I have two functions with the same return type which I named using the Named annotation to let dagger know that they aren’t the same.
 Note: Provide annotations can only be defined in a class which is annotated with @Module.
@@ -107,16 +107,16 @@ Note: Provide annotations can only be defined in a class which is annotated with
 Modules tell dagger how to provide dependencies from the dependency graph. 
 These are normally high-level dependencies that you haven’t already provided to the graph using @Inject.
 Modules are defined as classes with an @Module annotation.
-'''
+```
 @Module
 class AppModule{
     ...
 }
-'''
+```
 
 This example shows how you can define a basic module using the @Module annotation on your class.
 
-'''
+```
 @Module
 class AppModule(val activity: Activity){
     @Named("ActivityContext")
@@ -129,7 +129,7 @@ class AppModule(val activity: Activity){
         return activity.applicationContext
     }
 }
-'''
+```
 
 #### The steps:
 * Ignore dagger-android (added in 2.10) entirely, you don’t need it
