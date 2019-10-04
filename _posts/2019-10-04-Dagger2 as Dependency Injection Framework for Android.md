@@ -32,10 +32,10 @@ This technique has many benefits here I’m just listing the most important ones
 
 A fast dependency injector for Java and Android.
 
-Dagger is a compile-time framework for dependency injection. 
+Dagger2 is a compile-time framework for dependency injection. 
 It uses no reflection or runtime bytecode generation, does all its analysis at compile-time, and generates plain Java source code.
 
-Dagger is a fully static dependency injection framework which is based on annotations and helps us to manage our dependencies between classes. 
+Dagger2 is a fully static dependency injection framework which is based on annotations and helps us to manage our dependencies between classes. 
 Here are some of its benefits:
 * It makes your code very modular
 * Makes it easier to unit test your code
@@ -47,7 +47,7 @@ Here are some of its benefits:
 Dagger2 is light weight and it generates code at compile time so suitable for android.
 
 Dagger2 is not required for simple applications. 
-But it is always a good idea to use Dagger as functionality is always expected to change and your app should be designed in such way that making functionality changes requires minimal effort and you should be able make changes where it is need without breaking the entire app. 
+But it is always a good idea to use Dagger2 as functionality is always expected to change and your app should be designed in such way that making functionality changes requires minimal effort and you should be able make changes where it is need without breaking the entire app. 
 To achieve this, one of the design and dev items you need to consider is Dagger2 as DI(Dependecy Injection Framework).
 
 ### Annotations:
@@ -69,7 +69,7 @@ class MainClass{
 ```
 
 Here I create a class called Example which uses the @Inject on its constructor to tell dagger that it should use this constructor to inject dependencies of this type. 
-After that I define the MainClass which ask Dagger to get an instance of Example and dagger tries to inject the dependency using the constructor.
+After that I define the MainClass which ask Dagger2 to get an instance of Example and dagger tries to inject the dependency using the constructor.
 
 #### Provides:
 
@@ -146,7 +146,7 @@ For this reason, DaggerActivity calls AndroidInjection.inject() immediately in o
 It is crucial to call AndroidInjection.inject() before super.onCreate() in an Activity, since the call to super attaches Fragments from the previous activity instance during configuration change, which in turn injects the Fragments. In order for the Fragment injection to succeed, the Activity must already be injected. For users of ErrorProne, it is a compiler error to call AndroidInjection.inject() after super.onCreate().
 
 Here I actually define our provide function from above in our module.
-Note: If you want more information about dagger I can highly recommend Hari Vignesh Jayapalan introduction to dagger2 posts where he goes from the basics to more advanced dagger topics in just a few posts.
+Note: If you want more information about dagger I can highly recommend [Hari Vignesh Jayapalan introduction to dagger2 posts](https://medium.com/@harivigneshjayapalan/dagger-2-for-android-beginners-introduction-be6580cb3edb) where he goes from the basics to more advanced dagger topics in just a few posts.
 
 Now you should know how the dependency injection works and why it’s important to use it.
 
