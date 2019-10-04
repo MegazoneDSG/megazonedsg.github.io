@@ -4,7 +4,7 @@ author: Lukoh
 notification: true
 title: Android Dependency Injection Framework Dagger2
 description: Android Dependency Injection Framework Dagger2
-image: "https://raw.githubusercontent.com/MegazoneDSG/megazonedsg.github.io/master/assets/img/android/architecture/arch1.png"
+image: "https://user-images.githubusercontent.com/55682968/66175131-69bbb100-e693-11e9-943a-f98c1f6a8f68.png"
 categories:
 - tutorial
 date: 2019-10-04 09:30:00
