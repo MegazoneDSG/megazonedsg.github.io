@@ -16,6 +16,8 @@ introduction: Kafka 를 활용한 OCR 검수 시스템 만들기 글
 twitter_text: Kafka 를 활용한 OCR 검수 시스템 만들기 글
 ---
 
+# Kafka 를 활용한 OCR 검수 시스템 만들기
+
 쇼핑몰 사이트에서 상품 등록자가 허위 광고문구가 포함된 이미지를 올리거나, 불건전한 이미지를 올린다면 어떻게 검수할 수 있을까요?
 
 여기 이런 고객사의 요구가 있다고 해봅시다.
@@ -61,22 +63,22 @@ twitter_text: Kafka 를 활용한 OCR 검수 시스템 만들기 글
 Kafka Processing 데이터 흐름을 제어 할 때는, "이벤트 발행(Producer)은 무제한으로, 그러나 구독(Consumer) 은 자신이 수행할 수 있을 만큼만 가져오기" 의 전제 조건을 생각하며 제작 해 나가도록 합니다.
 위 그림에서 데이터의 흐름이 어떻게 흘러가는지 살펴보도록 합시다.
 
-1. 외부 시스템에서 10,000 건의 OCR 분석이 도착했습니다.
-2. `Command Handler` 는 잡 실행 요청에 대해 최소한의 Validation 만을 수행하고, 임의의 아이디를 생성한 다음 즉시 리턴합니다. 이 과정은 로컬에서 이루어지기 때문에 1~2 초 이내에 수행됩니다.
-3. `Command Handler` 가 Kafka 에 10,000 건의 잡 실행 요청을 발행합니다.
-4. `Job Request Consumer` 는 잡 실행 요청을 구독하여, 설정된 수 만큼 일거리를 가져옵니다.
-5. `Job Request Consumer` 가 실제로 데이터베이스에 Job 을 생성하며, 이런저런 일처리를 합니다.
-6. `Job Request Consumer` 가 `Job Assigned Consumer` 가 작업을 가져갈 수 있도록 어사인 이벤트를 발행합니다.
-7. `Job Assigned Consumer` 는 어사인 이벤트를 구독하며, 어떻게 캡처를 찍어야 할지 캡처 규칙을 읽어들여 `Capture Worker` 의 NodeJS 코드를 실행시킵니다.
-8. `Capture Worker` 는 캡처를 하기 위해 가상 브라우저를 실행시키고, 원하는 캡처 화면을 위해 DomControll 을 수행하는 스크립트를 실행합니다. 캡처를 할 때는 분할 화면 방식으로 촬영하며, 촬영된 각 캡쳐본을 Merge 하여 GCP Cloud Storage 에 업로드 합니다. 
+- 1. 외부 시스템에서 10,000 건의 OCR 분석이 도착했습니다.
+- 2. `Command Handler` 는 잡 실행 요청에 대해 최소한의 Validation 만을 수행하고, 임의의 아이디를 생성한 다음 즉시 리턴합니다. 이 과정은 로컬에서 이루어지기 때문에 1~2 초 이내에 수행됩니다.
+- 3. `Command Handler` 가 Kafka 에 10,000 건의 잡 실행 요청을 발행합니다.
+- 4. `Job Request Consumer` 는 잡 실행 요청을 구독하여, 설정된 수 만큼 일거리를 가져옵니다.
+- 5. `Job Request Consumer` 가 실제로 데이터베이스에 Job 을 생성하며, 이런저런 일처리를 합니다.
+- 6. `Job Request Consumer` 가 `Job Assigned Consumer` 가 작업을 가져갈 수 있도록 어사인 이벤트를 발행합니다.
+- 7. `Job Assigned Consumer` 는 어사인 이벤트를 구독하며, 어떻게 캡처를 찍어야 할지 캡처 규칙을 읽어들여 `Capture Worker` 의 NodeJS 코드를 실행시킵니다.
+- 8. `Capture Worker` 는 캡처를 하기 위해 가상 브라우저를 실행시키고, 원하는 캡처 화면을 위해 DomControll 을 수행하는 스크립트를 실행합니다. 캡처를 할 때는 분할 화면 방식으로 촬영하며, 촬영된 각 캡쳐본을 Merge 하여 GCP Cloud Storage 에 업로드 합니다. 
 
 > `Capture Worker` 는 설명은 간단한데 이걸 하기 위해 무진장 힘들었습니다. 가상 브라우저를 위해 Google Puppeter 를 사용했는데, 컨테이너 환경에서 변수가 많더군요. 폰트 문제와 Chronium 튜닝이 특히 힘들었습니다.
 
-9. `Capture Worker` 는 계속해서 GCP Vision API 를 사용하여 OCR 작업을 수행합니다.
-10. `Capture Worker` 에서 Kafka 로 작업 완료 이벤트를 발행합니다.
-11. `Job Complete Consumer` 는 작업 완료 이벤트를 구독하며, 이런저런 데이터 가공을 합니다.
-12. 잡 상태를 데이터베이스에 업데이트하고, `Web Hook Scheduler` 에 등록합니다.
-13. `Web Hook Scheduler` 는 완료된 작업에 대해, 외부 시스템인 `Job Receiver` 에게 HTTP 로 즉시 전달합니다. 전달에 실패할 것에 대비하여, Quartz 스케쥴러를 통해 최대 3번 일정 간격으로 재시도 합니다.
+- 9. `Capture Worker` 는 계속해서 GCP Vision API 를 사용하여 OCR 작업을 수행합니다.
+- 10. `Capture Worker` 에서 Kafka 로 작업 완료 이벤트를 발행합니다.
+- 11. `Job Complete Consumer` 는 작업 완료 이벤트를 구독하며, 이런저런 데이터 가공을 합니다.
+- 12. 잡 상태를 데이터베이스에 업데이트하고, `Web Hook Scheduler` 에 등록합니다.
+- 13. `Web Hook Scheduler` 는 완료된 작업에 대해, 외부 시스템인 `Job Receiver` 에게 HTTP 로 즉시 전달합니다. 전달에 실패할 것에 대비하여, Quartz 스케쥴러를 통해 최대 3번 일정 간격으로 재시도 합니다.
 
 # Failer Message Driven On Streaming Batch Processing
 
@@ -86,17 +88,20 @@ Kafka Processing 데이터 흐름을 제어 할 때는, "이벤트 발행(Produc
 
 위의 Best Practice 를 바탕으로 실패 메시지 처리 흐름을 제작 해 보았습니다.
 
-1. `Consumer` 들이 이벤트를 구독합니다.
-2. 작업 수행이 너무 길어져 타임아웃이 일어나거나, 로직 수행이 실패 한 경우 Exception 을 그대로 발생시킵니다.
-3. Kafka 는 에러를 JobError 토픽으로 딜리버리 합니다.
-4. `Job Error Consumer` 에서는 에러를 구독하며, 이런저런 후처리를 합니다.
-5. `Job Error Consumer` 에서 실패한 Job 처리에 대해 데이터베이를 갱신합니다.
-6. 사용자는 실패된 잡 이력 및 로그를 보고, 조치를 취한 후 `Job Retry Producer` 를 통해 재시도 처리를 합니다.
-7. `Job Retry Producer` 는 실패된 이벤트 메시지를 재 발행 합니다.
+- 1. `Consumer` 들이 이벤트를 구독합니다.
+- 2. 작업 수행이 너무 길어져 타임아웃이 일어나거나, 로직 수행이 실패 한 경우 Exception 을 그대로 발생시킵니다.
+- 3. Kafka 는 에러를 JobError 토픽으로 딜리버리 합니다.
+- 4. `Job Error Consumer` 에서는 에러를 구독하며, 이런저런 후처리를 합니다.
+- 5. `Job Error Consumer` 에서 실패한 Job 처리에 대해 데이터베이를 갱신합니다.
+- 6. 사용자는 실패된 잡 이력 및 로그를 보고, 조치를 취한 후 `Job Retry Producer` 를 통해 재시도 처리를 합니다.
+- 7. `Job Retry Producer` 는 실패된 이벤트 메시지를 재 발행 합니다.
 
 # Summary
 
 다음 포스트에는 실제 구현을 위한 코드 샘플을 살펴보도록 하겠습니다.
+
+
+
 
 
 
