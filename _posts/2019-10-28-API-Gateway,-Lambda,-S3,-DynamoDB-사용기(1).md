@@ -4,7 +4,7 @@ author: HYGill
 notification: true
 title: "API Gateway,Lambda,S3, DynamoDB사용기(1)"
 description: API Gateway,Lambda,S3, DynamoDB사용해보며 남기는 글
-image: "https://images.app.goo.gl/rRAUike1DBXyvU6w9"
+image: "https://miro.medium.com/max/949/1*Tv6O3_ZEH6lukEIiLrdMsQ.png"
 categories:
 - aws
 date: 2019-10-28 21:00:00
