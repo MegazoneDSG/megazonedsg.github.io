@@ -2,7 +2,7 @@
 layout: post
 author: HYGill
 notification: true
-title: "API Gateway,Lambda,S3, DynamoDB사용기(1)"
+title: "API Gateway,Lambda,S3, DynamoDB 사용기(1)"
 description: API Gateway,Lambda,S3, DynamoDB를 사용해보며 남기는 글
 image: "https://user-images.githubusercontent.com/47243329/67679584-beb9c100-f9cc-11e9-8b65-641e110409db.PNG"
 categories:
@@ -14,11 +14,12 @@ tags:
 - API Gateway
 - S3
 - DynamoDB
-introduction: API Gateway,Lambda,S3, DynamoDB사용해보며 남기는 글
-twitter_text: API Gateway,Lambda,S3, DynamoDB사용해보며 남기는 글
+introduction: API Gateway,Lambda,S3, DynamoDB를 사용해보며 남기는 글
+twitter_text: API Gateway,Lambda,S3, DynamoDB를 사용해보며 남기는 글
 ---
 
 # API Gateway, Lambda, S3, DynamoDB 사용기
+
 **프로젝트 개요**
 
 DSG 그룹의 Communication App을 만드는 프로젝트에서 서버를 구현하는 역할을 맡게 되었다. 
