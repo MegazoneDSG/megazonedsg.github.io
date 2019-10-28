@@ -3,7 +3,7 @@ layout: post
 author: HYGill
 notification: true
 title: "API Gateway,Lambda,S3, DynamoDB사용기(1)"
-description: API Gateway,Lambda,S3, DynamoDB사용해보며 남기는 글
+description: API Gateway,Lambda,S3, DynamoDB를 사용해보며 남기는 글
 image: "https://user-images.githubusercontent.com/47243329/67679584-beb9c100-f9cc-11e9-8b65-641e110409db.PNG"
 categories:
 - aws
