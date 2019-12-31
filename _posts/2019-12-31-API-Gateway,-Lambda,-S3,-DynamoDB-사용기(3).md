@@ -24,11 +24,13 @@ twitter_text: API Gateway,Lambda,S3, DynamoDB를 사용해보며 남기는 글
 
 >java에서 nodejs로 갈아탄 이유
 
-	multipart로 오는 데이터형식은 예제와 같이 구성되어있는데, 
-	자바로 할 경우  boundary로 잘라서 필요한 data를 꺼내서 가공하는 과정을 거쳐야하기때문이다.
-	물론 자바도 오픈소스가 있지만 코드분석결과 이렇게까지 해야하나 싶었다. 너무 길고 복잡했다.
-	그래서 module을 쉽게 사용할 수 있는 nodejs로 업로드와 업데이트 부분을 구현하기로 했다!
+multipart로 오는 데이터형식은 예제와 같이 구성되어있는데, 
+자바로 할 경우  boundary로 잘라서 필요한 data를 꺼내서 가공하는 과정을 거쳐야하기때문이다.
+물론 자바도 오픈소스가 있지만 코드분석결과 이렇게까지 해야하나 싶었다. 너무 길고 복잡했다.
+그래서 module을 쉽게 사용할 수 있는 nodejs로 업로드와 업데이트 부분을 구현하기로 했다!
+	
 ![image](https://user-images.githubusercontent.com/47243329/71571554-3798de80-2b1e-11ea-962a-2aef60c42196.png)
+
 출처 [http://egloos.zum.com/tequiero35/v/2094266](http://egloos.zum.com/tequiero35/v/2094266)
 
 npm다운받기 [https://www.npmjs.com/package/busboy](https://www.npmjs.com/package/busboy)
