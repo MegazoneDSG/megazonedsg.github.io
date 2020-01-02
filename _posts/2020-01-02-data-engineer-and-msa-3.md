@@ -1,7 +1,7 @@
 ---
 layout: post
 author: seungpilpark
-notification: false
+notification: true
 title: "3# 데이터 엔지니어와 마이크로 서비스 구축 SI 프로젝트"
 description: 3# 데이터 엔지니어와 마이크로 서비스 구축 SI 프로젝트
 image: "https://user-images.githubusercontent.com/13447690/71647290-dd736580-2d37-11ea-8868-c3a5775a00bc.png"
