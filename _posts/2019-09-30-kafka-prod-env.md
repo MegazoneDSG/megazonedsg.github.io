@@ -124,6 +124,8 @@ Zookeeper 데이터와 Kafka 데이터를 영구 디스크에 저장해야 장�
 마운트 한 이후에 파일 시스템을 생성합니다.
 
 ```  
+$ sudo yum install xfsprogs
+
 $ lsblk  
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT  
 nvme0n1       259:1    0    8G  0 disk  
