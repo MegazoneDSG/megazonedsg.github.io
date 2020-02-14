@@ -16,8 +16,8 @@ introduction: 첫 개발환경 구성 시 필요한 프로그램을 설치하기
 twitter_text: 첫 개발환경 구성 시 필요한 프로그램을 설치하기 위해 작성하는 글. 
 ---
 
-# *[Tutorial] 개발환경 구성 - Spring Boot, Git, Maven [1/3]*
-
+# *[Tutorial] 개발환경 구성 - Spring Boot, Git, Maven [1/3]*  
+  
 첫 개발환경 구성에 필요한 Spring Boot, Git, Maven 설치 튜토리얼입니다.  
 입사 후 개발환경이 바뀌면서 windows, mac 두 가지 os에 설치하게 되었습니다.  
 때문에 제가 설치했던 과정들을 두 가지 OS버전으로 간략하게 나열해보았습니다.  
@@ -83,7 +83,8 @@ Maven은 설치 전에 JDK가 반드시 필요합니다.
 다운로드: [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
 
 ### Maven 설치 - Mac
-다운로드: [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
+다운로드: [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)  
+
 터미널로 설치 시(Homebrew 필요)
 ```
 $ brew install maven
@@ -100,6 +101,7 @@ Maven home: /usr/local/Cellar/maven/3.6.3_1/libexec
 ```
   
 버전과 함께 설치된 경로가 나온다면 성공적입니다.  
+  
 이제 설치한 Maven을 IntelliJ에서 사용하도록 설치한 경로를 설정해주었습니다.   
 
 **IntelliJ > Preference(Settings)**
@@ -130,12 +132,13 @@ Maven home: /usr/local/Cellar/maven/3.6.3_1/libexec
 
 다운 받은 zip파일은 **압축을 풀어줍니다**. 
 
-이제 IntelliJ로 실행해보겠습니다. 
-`example-web` 폴더를 `Open`해줍니다.
-
+이제 IntelliJ로 실행해보겠습니다.  
+`example-web` 폴더를 `Open`해줍니다.  
+  
 아래와 같이 웹 어플리케이션이 생성되었습니다. 
-<img width="337" alt="스크린샷 2020-02-14 오후 2 41 17" src="https://user-images.githubusercontent.com/55119239/74504607-165a4900-4f38-11ea-8dfd-256798e0b12d.png">
 
+<img width="337" alt="스크린샷 2020-02-14 오후 2 41 17" src="https://user-images.githubusercontent.com/55119239/74504607-165a4900-4f38-11ea-8dfd-256798e0b12d.png">
+  
 `pom.xml`를 확인해보면, Spring Boot에서 기본적인 것들을 상속 받는 부분이 존재합니다. 
 ```
 <parent>  
@@ -172,11 +175,13 @@ public class HelloController {
 이제 필요한 것은 끝났습니다.  
 웹 어플리케이션을 한 번 구동해보겠습니다.  
 
-우측 상단에서 `Edit Configurations...`를 확인해보면, `Template`이 `Spring Boot`로 되어있습니다.   
+우측 상단에서 `Edit Configurations...`를 확인해보면,  
+`Template`이 `Spring Boot`로 되어있습니다.   
+
 <img width="475" alt="스크린샷 2020-02-14 오후 2 46 48" src="https://user-images.githubusercontent.com/55119239/74504840-dcd60d80-4f38-11ea-9677-1dc1abf03de9.png">
 
 `Main Class`가 `ExampleWebApplication`으로 잘 지정되어있는지 확인 후 구동했습니다.   
-(IntelliJ Community 버전에선 Spring Boot template가 지원되지 않지만 Main Class는 잘 구동되었습니다.)
+(IntelliJ Community 버전에선 Spring Boot template가 지원되지 않습니다.)
 
 ```
   .   ____          _            __ _ _
@@ -199,8 +204,13 @@ public class HelloController {
 2020-02-14 14:48:34.567  INFO 27284 --- [           main] c.m.t.exampleweb.ExampleWebApplication   : Started ExampleWebApplication in 1.331 seconds (JVM running for 2.031)
 ```
 
-8080포트로 Tomcat서버가 잘 구동되었습니다. 
-http://localhost:8080/hello 로 접속해보겠습니다. 
+8080포트로 Tomcat서버가 잘 구동되었습니다.  
+http://localhost:8080/hello 로 접속해보겠습니다.  
+
 <img width="332" alt="스크린샷 2020-02-14 오후 2 54 11" src="https://user-images.githubusercontent.com/55119239/74505221-ef047b80-4f39-11ea-8a8c-a7bcf2a7895c.png">
 
-성공적으로 Spring Boot를 구동했습니다. 
+
+성공적으로 Spring Boot를 구동했습니다.  
+
+
+
