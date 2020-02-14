@@ -1,7 +1,7 @@
 ---
 layout: post
 author: hyeonjeongk
-notification: false
+notification: true
 title: "[Tutorial] 개발환경 구성 - Spring Boot, Git, Maven [1/3]"
 description: 첫 개발환경 구성 시 필요한 프로그램을 설치하기 위해 작성하는 글. 
 image: "https://user-images.githubusercontent.com/55119239/74508917-976b0d80-4f43-11ea-9c97-f479de176bf3.png" 
