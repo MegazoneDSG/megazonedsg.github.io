@@ -60,6 +60,7 @@ git version 2.25.0
 
 **IntelliJ > Preference(Settings)**
 <img width="800" alt="스크린샷 2020-02-14 오후 2 54 11" src="https://user-images.githubusercontent.com/55119239/74405520-9b7a2b00-4e70-11ea-8d9e-fd558eff03c3.png">
+
 git 이 저장된 경로 지정 후 test를 해보면 됩니다.  
 
 
@@ -107,7 +108,7 @@ Maven home: /usr/local/Cellar/maven/3.6.3_1/libexec
 
 
 ## *Spring Boot*
-Spring Boot는 독립적으로 실행 가능한 어플리케이션을 만들어주는 응용 프로그램입니다. 
+> Spring Boot는 독립적으로 실행 가능한 어플리케이션을 만들어주는 응용 프로그램입니다. 
 
 특징적인 기능들은 아래와 같습니다.  
 * 단독실행가능한 스프링애플리케이션을 생성
