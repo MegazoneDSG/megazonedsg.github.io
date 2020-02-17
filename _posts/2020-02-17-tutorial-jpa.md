@@ -219,7 +219,7 @@ public class BookController {
 
 `/resources/data.sql` 파일을 생성해보았습니다.  
 테스트용 초기 데이터를 추가해두었습니다.  
-해당 위치에서 있으면 `Spring JDBC`가 자동으로 이를 인식하고 sql을 실행해줍니다.   
+해당 위치에 있으면 `Spring JDBC`가 자동으로 이를 인식하고 sql을 실행해줍니다.   
 
 ```
 INSERT INTO book (id, name, category, sell_count, create_at) VALUES
@@ -235,7 +235,7 @@ INSERT INTO book (id, name, category, sell_count, create_at) VALUES
      ('70afb424-7223-42df-9881-96a6284eacc2', '대한민국 요즘 여행', '여행', 16920, NOW());
 ```
 
-Postman으로 테스트해보았습니다.    
+서버 재구동 후 Postman으로 테스트해보았습니다.    
 
 <img width="340" alt="스크린샷 2020-02-17 오후 2 08 09" src="https://user-images.githubusercontent.com/55119239/74625246-04beae80-518f-11ea-9e32-316b520051ff.png">
 
