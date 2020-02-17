@@ -7,7 +7,7 @@ description: JPA의 기본적인 사용방법을 익히기 위해 작성하는 �
 image: "https://user-images.githubusercontent.com/55119239/74632964-ea430000-51a3-11ea-8e7d-a8ecb6402a86.png"
 categories: 
 - tutorial
-date: 2020-02-17 16:36:00
+date: 2020-02-17 16:59:00
 tags: 
 - JPA
 - Spring Data JPA
