@@ -24,7 +24,7 @@ QueryDSL 적용을 통해 Left Join을 구현해보고자 합니다.
 QueryDSL의 정의를 먼저 살펴보았습니다.  
 - QueryDSL
 	- 개념 
-정적 타입으로 된 SQL과 같은 쿼리를 구성할 수 있도록 해주는 프레임워크  
+		- 정적 타입으로 된 SQL과 같은 쿼리를 구성할 수 있도록 해주는 프레임워크  
 	- 원칙
 		- 타입안정성 (Type safety)
 		- 일관성(consistency) 
@@ -38,34 +38,18 @@ QueryDSL의 정의를 먼저 살펴보았습니다.
 
 
 참조: 
-
 * [QueryDSL Reference Guide](http://www.querydsl.com/static/querydsl/4.0.1/reference/ko-KR/html_single/)
 * [[Baeldung] intro-to-querydsl](https://www.baeldung.com/intro-to-querydsl)
 * [[Baeldung] A Guide to Querydsl with JPA](https://www.baeldung.com/querydsl-with-jpa-tutorial)
 
 
-이 튜토리얼에서는 책 대여와 관련된 기능을 통해 QueryDSL의 Join 기능을 간단하게 구현해보았습니다.  
-
-BookRentalEntity 객체와 구현해볼 기능입니다.  
-
-```
-BookRentalEntity
-
-UUID    id
-UUID    bookId
-string  userId
-string  userName
-boolean returned
-Date    createAt
-```
+이 튜토리얼에서는 QueryDSL의 Join 기능을 간단하게 구현해보았습니다.  
 
 * API Spec
 	* `POST` /book/{book_id}/rental : 책 대여 기록 인서트
 	* `GET` /book/{book_id}/rental : 해당 책의 대여 기록 리스트
 	* `PUT` /book/{book_id}/rental/{rental_id}/return : 책 반납
 
-`책 대여 기록 insert` 및 `책 반납`의 경우, 간단하게 crud로 구현하였습니다.
-`해당 책의 대여 기록 리스트`는 QueryDSL을 통해 left join으로 구현했습니다. 
 
 진행한 튜토리얼 순서는 아래와 같습니다.   
 
@@ -129,6 +113,17 @@ JPA와 함께 QueryDSL을 사용하기 위한 의존성을 추가해보겠습니
 
 
 ### 2. BookRentalEntity 추가 
+```
+BookRentalEntity
+
+UUID    id
+UUID    bookId
+string  userId
+string  userName
+boolean returned
+Date    createAt
+```
+
 ```
 package com.mz.example.examplebook.domain.book;
 
