@@ -81,8 +81,6 @@ spring.h2.console.enabled=true
 SQL 보기 및 정렬, h2 database의 콘솔 화면을 볼 수 있는 옵션을 추가했습니다.  
 
 서버 구동 후 `http://localhost:8080/h2-console`로 접속해 연결이 잘 되는지 테스트합니다.  
-h2 Driver가 로드되지 않는다는 등의 오류로 서버 구동이 되지 않을 경우,  
-추가된 설정 뒷부분에 공백이 있지 않는지 점검해주시기 바랍니다.  
 
 <img width="340" alt="스크린샷 2020-02-17 오후 4 53 27" src="https://user-images.githubusercontent.com/55119239/74633889-0a73be80-51a6-11ea-8ebc-dfb863ee1672.png">
 
