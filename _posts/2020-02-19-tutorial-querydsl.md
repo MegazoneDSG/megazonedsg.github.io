@@ -167,8 +167,9 @@ public class BookRentalEntity {
 }
 ```
 
-`Book` Class에는 별도 설정을 더하지 않았습니다. 
-`@ManyToOne`만 사용함으로써 단방향으로 연결했습니다. 
+`Book` Class에는 별도 설정을 더하지 않았습니다.  
+
+`@ManyToOne`만 사용함으로써 단방향으로 연결했습니다.  
 
 
 ### 3. Maven install
