@@ -88,7 +88,7 @@ OAuth 2.0의 사양과 확장은 [IETF OAuth Working Group] (https://www.ietf.or
 
 ![](https://user-images.githubusercontent.com/13447690/79689420-b5305800-828f-11ea-887e-6c60983de9f9.png)
  
-기업이 보유한 서비스가 많고 인증 된 스토리지가 많을수록 이 방법의 이점이 커집니다.
+기업이 보유한 서비스가 많고 사용자정보 저장소가 다양하고 많을수록 이 방법의 이점이 커집니다.
 
 ![](http://ssodoc.lgcom.lge.com/docs/image/concept/concept5.png)
 
@@ -97,6 +97,8 @@ OAuth 2.0의 사양과 확장은 [IETF OAuth Working Group] (https://www.ietf.or
 ## How to integrate user data?
 
 ### Pipeline modeler
+
+다음은 다중 사용자 스토리지 지원과 함께, 다중 사용자 스토리지를 효과적으로 모델링 할 수 있는 SSO 의 기능을 소개합니다.
 
 > 파이프라인 모델러: 각 클라이언트가 사용자 정보에 액세스 할 때 데이터에 액세스하는 방법을 모델링 합니다.
 
@@ -112,11 +114,6 @@ OAuth 2.0의 사양과 확장은 [IETF OAuth Working Group] (https://www.ietf.or
 > - Others: 이메일 인증, MFA 처리 등을 구성할 수 있는 타스크
 
 모든 작업 정의는 UI Modeler 에서 설정할 수 있으며 서버를 다시 시작하지 않고 즉시 반영됩니다. 2 단계 인증과 같은 로그인 시나리오가 가능합니다.
-
-**파이프 라인은 다음 채널을 통해 실행할 수 있습니다:**
-
-> - Oauth2 표준 인증 Flow
-> - RestAPI 직접 호출
 
 *Example pipeline for login*
 ![](http://ssodoc.lgcom.lge.com/docs/image/concept/concept6.png)
@@ -244,7 +241,7 @@ Oauth2.0 Spec 은 인증/인가에 대한 flow 를 제공하고 있지만 이것
 > **두 번째 문제는 동시로그인/아웃 문제입니다.**
 
 Oauth2를 사용하여 SiteA 또는 SiteB에 대한 초기 인증이 성공하고 토큰이 발행되었다고 가정하십시오.
-SiteA 또는 SiteB 어플리케이션의 세션레벨에서 각기 다른 세션유지시간 값을 유지하는 경우, 사이트 A와 사이트 B의 세션 만료시간이 다를 수 있ㅅ브니다.
+SiteA 또는 SiteB 어플리케이션의 세션레벨에서 각기 다른 세션유지시간 값을 유지하는 경우, 사이트 A와 사이트 B의 세션 만료시간이 다를 수 있습니다.
 
 이 경우 SiteA가 로그 아웃 된 경우 전체 사이트에서 여전히 로그인 된 상태로 남아있는 비 일관성 문제가 발생합니다.
 
