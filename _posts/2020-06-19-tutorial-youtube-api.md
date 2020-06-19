@@ -4,7 +4,7 @@ author: jangjinik
 notification: true
 title: "YouTube Data API v3 사용해보기 (1/2)"
 description: YouTube Data API v3 사용해보기 (1/2)
-image: "https://user-images.githubusercontent.com/60992288/85112999-8d3e8000-b251-11ea-8900-dcd837799257.png"
+image: "https://user-images.githubusercontent.com/60992288/85115015-f7592400-b255-11ea-9279-84529fe61fa7.png"
 categories:
 - java
 date: 2020-06-19 17:00:00
