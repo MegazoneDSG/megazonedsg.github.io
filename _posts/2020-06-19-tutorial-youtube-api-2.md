@@ -75,6 +75,7 @@ gradle 을 빌드 다시 해주세요. 그렇게 해야만 의존성이 추가 �
 아래 3가지 항목외에 더 필요한 정보가 있다면, 공식 API 문서를 참고해서 수정합니다.
 
 >src/main/java/{package}/dto/youtube/YouTubeDto.java
+
 ```
 @Getter
 @Setter
@@ -97,6 +98,7 @@ public class YouTubeDto {
 ### 네번째, YouTubeProvider 생성
 
 >src/main/java/{package}/service/youtube/spec/YouTubeProvider.java
+
 ```
 import com.jinik.tutorial.demo.dto.youtube.YouTubeDto;
 
@@ -120,6 +122,7 @@ public interface YouTubeProvider {
 
 
 >src/main/java/{package}/service/youtube/YouTubeService.java
+
 ```
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequest;
@@ -217,6 +220,7 @@ public class YouTubeService implements YouTubeProvider {
 이제 요청을 받고, API를 호출 할 수 있게 Controller를 생성하겠습니다.
 
 >src/main/java/{package}/controller/youtube/YouTubeController.java
+
 ```
 import com.jinik.tutorial.demo.dto.youtube.YouTubeDto;
 import com.jinik.tutorial.demo.service.youtube.spec.YouTubeProvider;
