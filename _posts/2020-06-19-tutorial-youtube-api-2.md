@@ -1,7 +1,7 @@
 ---
 layout: post
-author: jangjinik
-notification: false
+author: jinikjang
+notification: true
 title: "YouTube Data API v3 사용해보기 (2/2)"
 description: YouTube Data API v3 사용해보기 (2/2)
 image: "https://user-images.githubusercontent.com/60992288/85112999-8d3e8000-b251-11ea-8900-dcd837799257.png"
