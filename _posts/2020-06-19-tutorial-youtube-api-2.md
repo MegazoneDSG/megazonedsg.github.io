@@ -16,7 +16,7 @@ twitter_text: YouTube Data API v3 사용해보기
 
 앞서서 YouTube Data API v3를 사용하기 위해서, 구글 계정으로 프로젝트와 API Key, YouTube Data API v3 서비스 등록을 진행하였습니다.
 
-이전블로그 참고 :  [https://megazonedsg.github.io/tutorial-youtube-api/](https://megazonedsg.github.io/tutorial-youtube-api/)
+이전블로그 참고 :  [https://megazonedsg.github.io/tutorial-youtube-api-1/](https://megazonedsg.github.io/tutorial-youtube-api-1/)
 
 이번에는 YouTube Data API v3를 Spring Boot 프로젝트를 만들어 서비스를 호출하도록 하겠습니다.
 [https://developers.google.com/youtube/v3/getting-started](https://developers.google.com/youtube/v3/getting-started)
