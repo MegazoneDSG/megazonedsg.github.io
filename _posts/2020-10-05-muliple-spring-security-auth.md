@@ -151,7 +151,7 @@ twitter_text: Spring Security 다중인증수단 적용기
     // UsernamePasswordAuthenticationFilter 이후 커스텀 필터를 추가하는 부분입니다.
     http
         .addFilterAfter(IntranetAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-        .addFilterAfter(clientAuthenticationFilter, WoowaAuthSessionFilter.class)
+        .addFilterAfter(clientAuthenticationFilter, IntranetAuthenticationFilter.class)
         .addFilterAfter(userBlockFilter, ClientAuthenticationFilter.class);
   }
 ```
