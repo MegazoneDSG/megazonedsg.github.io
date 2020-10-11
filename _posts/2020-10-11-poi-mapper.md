@@ -16,7 +16,7 @@ twitter_text: Poi-mapper(Excel model mapper) 라이브러리 개발기
 
 # Poi-mapper(Excel model mapper) 라이브러리 개발기
 
-깃허브 주소 **[poi-mapper](https://github.com/MegazoneDSG/poi-mapper)** (좋아요(Github Start) 한번씩 해주시면 감사합니다 ^^)
+깃허브 주소 **[poi-mapper](https://github.com/MegazoneDSG/poi-mapper)** (좋아요 Github Star 클릭 한번씩 해주시면 감사합니다 ^^)
 
 ![](https://user-images.githubusercontent.com/61041926/95656676-dee58000-0b4a-11eb-936e-3cc22d5a4432.png)
 
