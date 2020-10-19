@@ -25,9 +25,9 @@ twitter_text: Poi-mapper(Excel model mapper) 라이브러리 개발기
 
 많은 수의 양식을 보다 효과적으로 개발하기 위해 어노테이션 기반의 엑셀 모델 매퍼 라이브러리를 개발하게 되었습니다.
 
-해당 라이브러리는 유명한 Java Excel Library 인 [Apaceh Poi](https://poi.apache.org/) 를 어노테이션으로 개발할 수 있게 해 줍니다.
+해당 라이브러리는 유명한 Java Excel Library 인 [Apache Poi](https://poi.apache.org/) 를 어노테이션으로 개발할 수 있게 해 줍니다.
 
-기존에는 Apaceh Poi 만을 사용하여 원하는 데이터를 엑셀로 표현하게 될 경우,
+기존에는 Apache Poi 만을 사용하여 원하는 데이터를 엑셀로 표현하게 될 경우,
 
 - per row, per cell 마다 하드코딩이 들어가기 때문에 디버깅이 어려움
 - Excel 을 데이터로 변환할경우와 데이터를 Excel로 변환하는 두가지 케이스 모두 제작해야함.
