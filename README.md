@@ -1,51 +1,37 @@
-# Jekyll Theme - Mundana by WowThemes.net
+# 메가존 DSG 웹서비스 기술블로그 글쓰기
 
-[Live Demo](https://wowthemesnet.github.io/mundana-theme-jekyll/) &nbsp; | &nbsp; 
-[Download](https://github.com/wowthemesnet/mundana-theme-jekyll/archive/master.zip) &nbsp; | &nbsp; 
-[Buy me a coffe](https://www.wowthemes.net/donate/) &nbsp; | &nbsp; [Documentation](https://bootstrapstarter.com/bootstrap-templates/mundana-theme-jekyll/) &nbsp; | &nbsp; 
-[WordPress version](https://www.wowthemes.net/themes/mundana-wordpress/) 
+1. Github 에 가입하고, Github 아이디를 박승필(seungpilpark@mz.co.kr) 님에게 알려주시면 Github 블로그 프로젝트에 초대해드립니다.
+2. 초대를 수락하신 후, 글을 작성합니다.
 
-![mundana jekyll theme screenshot](assets/images/screenshot.jpg)
+## 글 작성법
 
-### Documentation
+1. _posts 폴더 > Create New File 을 클릭합니다.
 
-[How to install & use](https://bootstrapstarter.com/bootstrap-templates/mundana-theme-jekyll/)
+![](assets/img/readme1.png)
 
-### Contribute to Mundana repository
+2. 아래의 형식대로 마크다운 형식으로 글을 작성한 후, 하단의 Commit New file 을 클릭합니다. 잠시 후 블로그에 새 글이 올라온 걸 확인 가능합니다.
 
-1. In the top-right corner of this page, click **Fork**.
+![](assets/img/readme2.png)
 
-2. Clone a copy of your fork on your local, replacing *YOUR-USERNAME* with your Github username.
+- 글 작성 양식 설명입니다.
+- 글 작성시 [https://dillinger.io/](https://dillinger.io/) 등의 온라인 마크다운에디터를 사용하시면 편리합니다.
 
-   `git clone https://github.com/YOUR-USERNAME/mundana-theme-jekyll.git`
+```markdown
+---
+layout: post
+author: seungpilpark   ->  가입하신 Github Username
+notification: true     ->  새글작성 알림메일 여부
+title: "Poi-mapper(Excel model mapper) 라이브러리 개발기"   ->  블로그 글 제목
+description: Poi-mapper(Excel model mapper) 라이브러리 개발기  ->  블로그 글 설명
+image: "https://user-images.githubusercontent.com/61041926/95656676-dee58000-0b4a-11eb-936e-3cc22d5a4432.png"  -> 블로그 글 이미지
+categories:   ->  블로그 카테고리
+- java
+date: 2020-10-11 11:00:00  ->  블로그의 글 작성일 (이 날짜 순서대로 블로그 글이 정렬됩니다.)
+tags:  ->  블로그 태그리스트
+- enum
+introduction: Poi-mapper(Excel model mapper) 라이브러리 개발기
+twitter_text: Poi-mapper(Excel model mapper) 라이브러리 개발기
+---
+본문내용
+```
 
-3. **Create a branch**: 
-
-   `git checkout -b <my-new-feature-or-fix>`
-
-4. **Make necessary changes and commit those changes**:
-
-   `git add .`
-
-   `git commit -m "new feature or fix"`
-
-5. **Push changes**, replacing `<add-your-branch-name>` with the name of the branch you created earlier at step #3. :
-
-   `git push origin <add-your-branch-name>`
-
-6. Submit your changes for review. Go to your repository on GitHub, you'll see a **Compare & pull request** button. Click on that button. Now submit the pull request.
-
-That's it! Soon I'll be merging your changes into the master branch of this project. You will get a notification email once the changes have been merged. Thank you for your contribution.
-
-
-### Copyright
-
-Copyright (C) 2019 WowThemes.net.
-
-Theme designed and developed by [Sal](https://www.wowthemes.net), *free* under MIT license. 
-
-<a href="https://www.wowthemes.net/donate/" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-### Live Demo
-
-[Live Demo](https://wowthemesnet.github.io/mundana-theme-jekyll/)
