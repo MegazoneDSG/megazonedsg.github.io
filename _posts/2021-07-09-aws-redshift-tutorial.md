@@ -1,5 +1,6 @@
 ---
-layout: post author: seungpilpark 
+layout: post 
+author: seungpilpark 
 notification: true 
 title: "AWS 레드시프트 스펙트럼 실습해보기"
 description: AWS 레드시프트 스펙트럼 실습해보기
