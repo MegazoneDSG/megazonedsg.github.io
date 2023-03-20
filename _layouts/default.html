@@ -51,7 +51,8 @@
         // // Construct the new URL with the desired site, path, and parameters
         let newUrl;
         if(pageLayout === 'post'){
-            newUrl = `https://blog.kuberix.co.kr/${formattedString}${pageUrl}.html`;
+            const outputString = pageUrl.replace(/\/$/, '');
+            newUrl = `https://blog.kuberix.co.kr/${formattedString}${outputString}.html`;
         }else{
             newUrl = `https://blog.kuberix.co.kr/`;
         }
