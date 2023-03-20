@@ -32,6 +32,34 @@
 
     {% include tracking-header.html %}
 
+    <script>
+        const pageUrl = '{{ page.url }}'
+        const pageDate = '{{ page.date }}'
+        const pageLayout = '{{ page.layout }}'
+
+        // Create a new Date object from the input string
+        const date = new Date(pageDate);
+
+        // Get the year, month, and day values from the Date object
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+
+        // Construct the yyyy-MM-dd formatted string
+        const formattedString = `${year}/${month}/${day}`;
+
+        // // Construct the new URL with the desired site, path, and parameters
+        let newUrl;
+        if(pageLayout === 'post'){
+            newUrl = `https://blog.kuberix.co.kr/${formattedString}${pageUrl}`;
+        }else{
+            newUrl = `https://blog.kuberix.co.kr/`;
+        }
+        //
+        // // Redirect the current page to the new URL
+        window.location.assign(newUrl);
+
+    </script>
 
 </head>
 
